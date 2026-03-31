@@ -108,9 +108,9 @@ def fetch_arcgis_layer(
     features: list[dict[str, Any]] = []
 
     for chunk in batched(object_ids, batch_size):
-        response = requests.get(
+        response = requests.post(
             f"{service_url}/query",
-            params={
+            data={
                 "f": source.get("format", "geojson"),
                 "objectIds": ",".join(str(value) for value in chunk),
                 "outFields": "*",
@@ -177,4 +177,3 @@ def collect_source(
     meta_path = source_dir / f"{stamp}_{Path(source['file_name']).stem}.meta.json"
     write_json(meta_path, metadata)
     return metadata
-

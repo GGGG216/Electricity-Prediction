@@ -28,21 +28,18 @@ def select_sources(
     selected: list[dict[str, Any]] = []
     name_filter = set(source_names or [])
     group_filter = set(groups or [])
+    unknown_names = sorted(name_filter - set(catalog))
+    if unknown_names:
+        raise KeyError(f"Unknown source names: {', '.join(unknown_names)}")
 
     for item in catalog.values():
         if item["kind"] == "manual" and not include_manual:
             continue
-        if name_filter and item["name"] not in name_filter:
-            continue
-        if group_filter and item["group"] not in group_filter:
-            continue
         if not name_filter and not group_filter and item["group"] != "core_exogenous":
             continue
+        if name_filter or group_filter:
+            if item["name"] not in name_filter and item["group"] not in group_filter:
+                continue
         selected.append(item)
 
-    missing = sorted(name_filter - {item["name"] for item in selected})
-    if missing:
-        raise KeyError(f"Unknown source names: {', '.join(missing)}")
-
     return selected
-

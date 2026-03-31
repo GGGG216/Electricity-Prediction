@@ -7,6 +7,8 @@ from typing import Any
 
 from .catalog import ROOT, list_groups, load_catalog, select_sources
 from .fetchers import collect_source, timestamp_slug, write_json
+from .train import run_training
+from .transform import MANUAL_ROOT, MODEL_ROOT, RAW_ROOT, SILVER_ROOT, build_silver_tables
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -35,6 +37,26 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional cap for ArcGIS feature downloads. Useful for smoke tests.",
     )
     collect_parser.add_argument("--dry-run", action="store_true", help="Resolve selection only.")
+
+    silver_parser = subparsers.add_parser("silver", help="Transform latest raw payloads into silver/model tables.")
+    silver_parser.add_argument("--raw-root", default=str(RAW_ROOT))
+    silver_parser.add_argument("--silver-root", default=str(SILVER_ROOT))
+    silver_parser.add_argument("--model-root", default=str(MODEL_ROOT))
+    silver_parser.add_argument("--manual-root", default=str(MANUAL_ROOT))
+
+    train_parser = subparsers.add_parser("train", help="Train baseline models on the train-ready dataset.")
+    train_parser.add_argument(
+        "--dataset",
+        default=str(MODEL_ROOT / "train_ready_direct_168h.csv"),
+        help="Input dataset CSV.",
+    )
+    train_parser.add_argument(
+        "--output-dir",
+        default=str(MODEL_ROOT / "training_runs"),
+        help="Directory for metrics and predictions.",
+    )
+    train_parser.add_argument("--target-col", default="target_load_t_plus_168h")
+    train_parser.add_argument("--test-fraction", type=float, default=0.2)
 
     return parser
 
@@ -95,6 +117,28 @@ def handle_collect(args: argparse.Namespace) -> int:
     return 0
 
 
+def handle_silver(args: argparse.Namespace) -> int:
+    summary = build_silver_tables(
+        raw_root=Path(args.raw_root),
+        silver_root=Path(args.silver_root),
+        model_root=Path(args.model_root),
+        manual_root=Path(args.manual_root),
+    )
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    return 0
+
+
+def handle_train(args: argparse.Namespace) -> int:
+    summary = run_training(
+        dataset_path=Path(args.dataset),
+        output_dir=Path(args.output_dir),
+        target_col=args.target_col,
+        test_fraction=args.test_fraction,
+    )
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    return 0
+
+
 def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
@@ -103,6 +147,9 @@ def main() -> None:
         raise SystemExit(handle_list(args.include_manual))
     if args.command == "collect":
         raise SystemExit(handle_collect(args))
+    if args.command == "silver":
+        raise SystemExit(handle_silver(args))
+    if args.command == "train":
+        raise SystemExit(handle_train(args))
 
     parser.error(f"Unknown command: {args.command}")
-

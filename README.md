@@ -1,6 +1,6 @@
 # Hong Kong Weekly Load Data Workflow
 
-This repo now contains a working data-collection skeleton for your group project on forecasting Hong Kong weekly electricity demand curves.
+This repo now contains a working end-to-end workflow for your group project on forecasting Hong Kong weekly electricity demand curves.
 
 The key design choice is simple:
 
@@ -15,19 +15,29 @@ The key design choice is simple:
 - `config/district_to_zone.csv`
   - A practical crosswalk from district names to your 3-zone setup, including a canonical name column for inconsistent spellings such as `Central & Western` vs `Central and Western`.
 - `hk_power_data/`
-  - A small CLI that can download:
+  - A CLI that can:
+    - collect official raw data
+    - transform raw data into silver tables
+    - build a train-ready weekly forecasting table once the real hourly label is provided
+    - run baseline training and evaluation
+- `docs/workflow.md`
+  - Detailed explanation of the workflow, feature meaning, and train/test logic.
+- `data/manual/`
+  - Drop zone for the real target label file. This folder is git-ignored for CSVs so you do not accidentally publish private labels.
+- `data/manual_templates/`
+  - Templates for the load label that still needs to be supplied manually.
+
+The collectors can download:
     - HKO historical weather CSVs
     - 1823 public holidays JSON
     - Immigration daily passenger traffic
     - Transport Department raw detector XML and monthly digest CSVs
     - C&SD energy tables through the official JSON API
     - ArcGIS-hosted spatial layers such as district population projections, EV chargers, and building footprints
-- `data/manual_templates/`
-  - Templates for the load label that still needs to be supplied manually.
 
 ## Quick Start
 
-Install the only runtime dependency:
+Install the runtime dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -60,6 +70,12 @@ Collect mobility and energy proxies as well:
 python -m hk_power_data collect --group mobility --group energy_proxies
 ```
 
+Collect a mixed set using both explicit sources and groups:
+
+```bash
+python -m hk_power_data collect --group core_exogenous --group mobility --source district_population_projection --source ev_public_chargers
+```
+
 Smoke-test ArcGIS sources without pulling the full large layers:
 
 ```bash
@@ -72,11 +88,29 @@ Pull the full building footprint layer only when you are ready for a large downl
 python -m hk_power_data collect --source building_footprints
 ```
 
+Build the silver layer:
+
+```bash
+python -m hk_power_data silver
+```
+
+Train the baseline models once the real label file exists:
+
+```bash
+python -m hk_power_data train
+```
+
 ## Recommended Project Workflow
 
 ### Phase 1: Lock the label
 
-Put your target load file into the schema in `data/manual_templates/city_load_hourly_template.csv`.
+Put your target load file into:
+
+- `data/manual/city_load_hourly.csv`
+
+Use the schema in:
+
+- `data/manual_templates/city_load_hourly_template.csv`
 
 Required columns:
 
@@ -125,25 +159,74 @@ Then aggregate district-level features into your three forecasting zones with `c
 
 ### Phase 4: Build the silver tables
 
-After download, the next ETL step should normalize each source into these canonical keys:
+Run:
+
+```bash
+python -m hk_power_data silver
+```
+
+This creates normalized source tables in `data/silver/`.
+
+Core canonical keys are:
 
 - `ts_utc` or `date_local`
 - `zone_id`
 - `source_name`
 
-Then derive:
+The silver step also standardizes:
+
+- date parsing
+- units and numeric columns
+- district name harmonization
+- city-level mobility aggregates
+- zone-level static features
+
+Then, once the label is present, it derives:
 
 - lag features: `lag_1h`, `lag_24h`, `lag_168h`
-- rolling features: `mean_24h`, `max_168h`, `std_168h`
+- rolling features: `mean_24h`, `std_24h`, `mean_168h`, `std_168h`
 - calendar features: hour-of-week, holiday flags
-- zone summaries: district-to-zone rollups for population, EV chargers, building area
+- zone summaries: district-to-zone rollups for population and EV chargers
+- future labels such as `target_load_t_plus_168h`
+
+### Phase 5: Train and evaluate
+
+After `data/manual/city_load_hourly.csv` is available and `silver` has been rebuilt, the pipeline writes:
+
+- `data/model/hourly_zone_features.csv`
+- `data/model/train_ready_direct_168h.csv`
+
+Then run:
+
+```bash
+python -m hk_power_data train
+```
+
+This performs:
+
+- chronological train/test split
+- naive same-hour-last-week baseline
+- ridge regression
+- random forest
+
+And writes:
+
+- `data/model/training_runs/metrics.json`
+- `data/model/training_runs/predictions.csv`
 
 ## Notes
 
 - Collected raw files are written to `data/raw/<source_name>/`.
 - Each download writes a sidecar metadata file and a run manifest under `data/raw/_runs/`.
 - `building_footprints` is intentionally marked `P2` because it is large.
+- `building_footprints_silver.csv` reflects whatever raw building layer you have collected. If your latest raw file came from a smoke test with `--max-records`, that silver table will also be partial.
 - C&SD API calls use an explicit `Referer` header because the endpoint rejects anonymous bot-like requests otherwise.
+- `data/model/` and `data/manual/*.csv` are git-ignored, because they are either generated artifacts or likely to contain sensitive/private labels.
+- The current model workflow is designed for a **direct 168-hour forecasting setup**. Each row at time `t` predicts the load at `t + 168h`.
+
+## Recommended Reading
+
+- Full workflow explanation: `docs/workflow.md`
 
 ## Official Sources Used In This Workflow
 
