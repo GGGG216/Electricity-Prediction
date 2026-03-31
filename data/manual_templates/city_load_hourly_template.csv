@@ -1,0 +1,6 @@
+ts_utc,ts_local,zone_id,load_value,load_unit,measure_type,quality_flag,source_url
+2025-01-06T00:00:00Z,2025-01-06 08:00:00,HK_TOTAL,6800.5,MW,demand,ok,https://example.com/source
+2025-01-06T00:00:00Z,2025-01-06 08:00:00,HK_ISLAND,1050.2,MW,demand,ok,https://example.com/source
+2025-01-06T00:00:00Z,2025-01-06 08:00:00,KOWLOON,2140.3,MW,demand,ok,https://example.com/source
+2025-01-06T00:00:00Z,2025-01-06 08:00:00,NEW_TERRITORIES,3610.0,MW,demand,ok,https://example.com/source
+

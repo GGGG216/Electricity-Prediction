@@ -1,0 +1,20 @@
+source_district_name,canonical_district_name,zone_id
+Central and Western,Central and Western,HK_ISLAND
+Central & Western,Central and Western,HK_ISLAND
+Eastern,Eastern,HK_ISLAND
+Southern,Southern,HK_ISLAND
+Wan Chai,Wan Chai,HK_ISLAND
+Kowloon City,Kowloon City,KOWLOON
+Kwun Tong,Kwun Tong,KOWLOON
+Sham Shui Po,Sham Shui Po,KOWLOON
+Wong Tai Sin,Wong Tai Sin,KOWLOON
+Yau Tsim Mong,Yau Tsim Mong,KOWLOON
+Islands,Islands,NEW_TERRITORIES
+Kwai Tsing,Kwai Tsing,NEW_TERRITORIES
+North,North,NEW_TERRITORIES
+Sai Kung,Sai Kung,NEW_TERRITORIES
+Sha Tin,Sha Tin,NEW_TERRITORIES
+Tai Po,Tai Po,NEW_TERRITORIES
+Tsuen Wan,Tsuen Wan,NEW_TERRITORIES
+Tuen Mun,Tuen Mun,NEW_TERRITORIES
+Yuen Long,Yuen Long,NEW_TERRITORIES
