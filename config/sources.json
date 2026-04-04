@@ -220,39 +220,6 @@
     "format": "geojson",
     "service_url": "https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Building_view/FeatureServer/38",
     "source_page": "https://portal.csdi.gov.hk/geoportal/?datasetId=landsd_rcd_1637211194312_35158&lang=en",
-    "batch_size": 1000
-  },
-  {
-    "name": "manual_city_load_hourly",
-    "kind": "manual",
-    "group": "manual_targets",
-    "priority": "P0",
-    "cadence": "hourly",
-    "description": "City or zone hourly load target. This is the critical missing label for weekly curve forecasting.",
-    "join_keys": ["ts_utc", "zone_id"],
-    "file_name": "city_load_hourly.csv",
-    "expected_headers": [
-      "ts_utc",
-      "ts_local",
-      "zone_id",
-      "load_value",
-      "load_unit",
-      "measure_type",
-      "quality_flag",
-      "source_url"
-    ],
-    "source_page": "manual"
-  },
-  {
-    "name": "manual_hkust_meter_data",
-    "kind": "manual",
-    "group": "manual_targets",
-    "priority": "P0",
-    "cadence": "hourly",
-    "description": "Optional benchmark dataset: HKUST multi-year campus smart meter database from Dryad.",
-    "join_keys": ["meter_id", "ts_local"],
-    "file_name": "hkust_meter_data_placeholder.txt",
-    "source_page": "https://datadryad.org/stash/dataset/doi:10.5061/dryad.k3j9kd5h6"
+    "batch_size": 100
   }
 ]
-

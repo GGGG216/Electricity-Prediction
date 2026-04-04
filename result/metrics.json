@@ -1,0 +1,56 @@
+{
+  "dataset_path": "D:\\= =\\3544\\project\\data\\model\\city_monthly_train_ready.csv",
+  "target_col": "target_electricity_total_t_plus_1m",
+  "train_rows": 125,
+  "test_rows": 32,
+  "simple_linear_regression": {
+    "feature": "electricity_lag_12m",
+    "intercept": 13240.2238176,
+    "coefficient": 2071.8464560390025,
+    "metrics": {
+      "mae": 1155.4119768158484,
+      "rmse": 1346.2236573902937,
+      "r2": 0.7261286232017659,
+      "mape": 0.08711261243716881
+    }
+  },
+  "multiple_linear_regression": {
+    "features": [
+      "electricity_lag_1m",
+      "electricity_lag_12m",
+      "temp_mean_c_avg",
+      "temp_max_c_peak",
+      "rainfall_mm_sum",
+      "public_holiday_days",
+      "business_days",
+      "immigration_total_cross_border_passengers",
+      "public_transport_total_avg_daily_pax",
+      "cross_harbour_total_pax",
+      "gas_total_tj",
+      "sin_month",
+      "cos_month"
+    ],
+    "intercept": 13240.2238176,
+    "coefficients": {
+      "electricity_lag_1m": -96.72173781803923,
+      "electricity_lag_12m": -392.8964885706555,
+      "temp_mean_c_avg": 120.91744653253524,
+      "temp_max_c_peak": -688.3315829477127,
+      "rainfall_mm_sum": -37.264500123641675,
+      "public_holiday_days": 0.0,
+      "business_days": -28.02436844721172,
+      "immigration_total_cross_border_passengers": 40.33257065241054,
+      "public_transport_total_avg_daily_pax": 331.4616095576743,
+      "cross_harbour_total_pax": -471.2054613465686,
+      "gas_total_tj": 123.53736690373724,
+      "sin_month": -1207.599277681852,
+      "cos_month": -3276.8986279917526
+    },
+    "metrics": {
+      "mae": 784.2476527301371,
+      "rmse": 944.5806820276922,
+      "r2": 0.8651688224414175,
+      "mape": 0.058390583708377033
+    }
+  }
+}

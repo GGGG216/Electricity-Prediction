@@ -1,0 +1,13 @@
+﻿feature,correlation
+cos_month,-0.944130853522841
+electricity_industrial_tj,0.832376690883049
+electricity_commercial_tj,0.8296194111890098
+electricity_total_tj,0.8182366870127781
+temp_mean_c_avg,0.8182008916193643
+electricity_lag_12m,0.81737334957797
+temp_max_c_avg,0.8159192043583489
+temp_min_c_avg,0.8157893152250687
+temp_max_c_peak,0.8141861447916708
+hot_day_count,0.805430124921554
+electricity_lag_6m,-0.7989351433833699
+temp_min_c_low,0.7915234244773975

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import time
 from datetime import datetime, timezone
 from itertools import islice
 from pathlib import Path
@@ -35,6 +36,29 @@ def ensure_parent(path: Path) -> None:
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     ensure_parent(path)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def request_json_with_retry(
+    method: str,
+    url: str,
+    *,
+    attempts: int = 5,
+    backoff_seconds: float = 2.0,
+    **kwargs: Any,
+) -> dict[str, Any]:
+    last_error: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            response = requests.request(method=method, url=url, **kwargs)
+            response.raise_for_status()
+            return response.json()
+        except (requests.RequestException, json.JSONDecodeError) as exc:
+            last_error = exc
+            if attempt == attempts:
+                break
+            time.sleep(backoff_seconds * attempt)
+    assert last_error is not None
+    raise last_error
 
 
 def fetch_static_url(source: dict[str, Any], destination: Path) -> dict[str, Any]:
@@ -72,23 +96,20 @@ def fetch_censtatd_api(source: dict[str, Any], destination: Path) -> dict[str, A
 
 
 def _arcgis_object_ids(service_url: str) -> tuple[dict[str, Any], list[int]]:
-    metadata_response = requests.get(
+    metadata = request_json_with_retry(
+        "GET",
         service_url,
         params={"f": "json"},
         headers=DEFAULT_HEADERS,
         timeout=120,
     )
-    metadata_response.raise_for_status()
-    metadata = metadata_response.json()
-
-    ids_response = requests.get(
+    ids_payload = request_json_with_retry(
+        "GET",
         f"{service_url}/query",
         params={"f": "json", "where": "1=1", "returnIdsOnly": "true"},
         headers=DEFAULT_HEADERS,
         timeout=120,
     )
-    ids_response.raise_for_status()
-    ids_payload = ids_response.json()
     object_ids = sorted(ids_payload.get("objectIds", []))
     return metadata, object_ids
 
@@ -105,33 +126,42 @@ def fetch_arcgis_layer(
 
     batch_size = int(source.get("batch_size") or metadata.get("maxRecordCount") or 1000)
     batch_size = max(1, min(batch_size, 2000))
-    features: list[dict[str, Any]] = []
+    feature_count = 0
+    temp_destination = destination.with_suffix(destination.suffix + ".tmp")
+    ensure_parent(temp_destination)
 
-    for chunk in batched(object_ids, batch_size):
-        response = requests.post(
-            f"{service_url}/query",
-            data={
-                "f": source.get("format", "geojson"),
-                "objectIds": ",".join(str(value) for value in chunk),
-                "outFields": "*",
-                "returnGeometry": "true",
-                "outSR": "4326",
-            },
-            headers=DEFAULT_HEADERS,
-            timeout=120,
-        )
-        response.raise_for_status()
-        payload = response.json()
-        features.extend(payload.get("features", []))
+    with temp_destination.open("w", encoding="utf-8") as handle:
+        handle.write('{"type":"FeatureCollection","features":[')
+        first_feature = True
+        for chunk in batched(object_ids, batch_size):
+            payload = request_json_with_retry(
+                "POST",
+                f"{service_url}/query",
+                data={
+                    "f": source.get("format", "geojson"),
+                    "objectIds": ",".join(str(value) for value in chunk),
+                    "outFields": "*",
+                    "returnGeometry": "true",
+                    "outSR": "4326",
+                },
+                headers=DEFAULT_HEADERS,
+                timeout=180,
+                attempts=6,
+                backoff_seconds=3.0,
+            )
+            features = payload.get("features", [])
+            for feature in features:
+                if not first_feature:
+                    handle.write(",")
+                json.dump(feature, handle, ensure_ascii=False)
+                first_feature = False
+            feature_count += len(features)
+        handle.write("]}")
 
-    output = {
-        "type": "FeatureCollection",
-        "features": features,
-    }
-    write_json(destination, output)
+    temp_destination.replace(destination)
     return {
         "source_url": service_url,
-        "feature_count": len(features),
+        "feature_count": feature_count,
         "service_name": metadata.get("name"),
     }
 

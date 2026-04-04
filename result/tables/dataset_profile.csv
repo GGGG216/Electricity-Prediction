@@ -1,0 +1,9 @@
+﻿item,value
+train_ready_rows,157
+train_ready_columns,89
+start_month,2013-01-01
+end_month,2026-01-01
+target_mean_tj,13348.172239490446
+target_std_tj,2587.146336058456
+target_min_tj,9396.0
+target_max_tj,17948.0

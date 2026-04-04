@@ -1,0 +1,6 @@
+﻿issue,handling
+Mixed time granularity across sources,"Daily sources are aggregated to month, annual sources are merged through feature_year, and static sources are broadcast to all months."
+Target and feature coverage start at different dates,"The train-ready monthly window starts at 2013-01 and availability flags are preserved for immigration, transport, renewable generation, and population features."
+HK Electric renewable file is mislabeled as CSV,The ETL checks the file signature and switches to read_excel when the payload is actually an XLSX workbook.
+"C&SD period field mixes annual, quarterly, and monthly values",The ETL parses the period string explicitly and only keeps valid monthly rows for the city-level target table.
+Population projection is annual and limited in time range,The merge clips feature_year to the available projection range before joining the monthly model table.
