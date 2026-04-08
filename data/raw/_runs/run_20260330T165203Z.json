@@ -1,0 +1,116 @@
+{
+  "run_id": "run_20260330T165203Z",
+  "output_root": "D:\\= =\\3544\\project\\data\\raw",
+  "selected_sources": [
+    "hko_temp_mean_daily",
+    "hk_public_holidays_json",
+    "immd_daily_passenger_traffic",
+    "censtatd_peak_demand_annual",
+    "district_population_projection",
+    "ev_public_chargers",
+    "building_footprints"
+  ],
+  "results": [
+    {
+      "source_name": "hko_temp_mean_daily",
+      "collected_at_utc": "2026-03-30T16:52:08.689958+00:00",
+      "status": "downloaded",
+      "priority": "P0",
+      "group": "core_exogenous",
+      "description": "Hong Kong Observatory daily mean temperature at HKO station.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\hko_temp_mean_daily\\20260330T165203Z_daily_HKO_TEMP_ALL.csv",
+      "details": {
+        "bytes_written": 835997,
+        "content_type": "application/octet-stream, text/csv",
+        "source_url": "https://data.weather.gov.hk/weatherAPI/cis/csvfile/HKO/ALL/daily_HKO_TEMP_ALL.csv"
+      }
+    },
+    {
+      "source_name": "hk_public_holidays_json",
+      "collected_at_utc": "2026-03-30T16:52:11.406457+00:00",
+      "status": "downloaded",
+      "priority": "P0",
+      "group": "core_exogenous",
+      "description": "Hong Kong public holidays in JSON format from 1823.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\hk_public_holidays_json\\20260330T165208Z_hk_public_holidays.json",
+      "details": {
+        "bytes_written": 15519,
+        "content_type": "application/json",
+        "source_url": "https://www.1823.gov.hk/common/ical/en.json"
+      }
+    },
+    {
+      "source_name": "immd_daily_passenger_traffic",
+      "collected_at_utc": "2026-03-30T16:52:15.371850+00:00",
+      "status": "downloaded",
+      "priority": "P1",
+      "group": "mobility",
+      "description": "Daily passenger traffic by control point and direction.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\immd_daily_passenger_traffic\\20260330T165211Z_statistics_on_daily_passenger_traffic.csv",
+      "details": {
+        "bytes_written": 3048905,
+        "content_type": "text/csv",
+        "source_url": "https://www.immd.gov.hk/opendata/eng/transport/immigration_clearance/statistics_on_daily_passenger_traffic.csv"
+      }
+    },
+    {
+      "source_name": "censtatd_peak_demand_annual",
+      "collected_at_utc": "2026-03-30T16:52:18.734682+00:00",
+      "status": "downloaded",
+      "priority": "P1",
+      "group": "energy_proxies",
+      "description": "Generating capacity and peak demand of electricity and gas.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\censtatd_peak_demand_annual\\20260330T165215Z_censtatd_915_91204.json",
+      "details": {
+        "source_url": "https://www.censtatd.gov.hk/api/get.php",
+        "table_id": "915-91204",
+        "top_level_keys": [
+          "dataSet",
+          "header"
+        ]
+      }
+    },
+    {
+      "source_name": "district_population_projection",
+      "collected_at_utc": "2026-03-30T16:52:29.729663+00:00",
+      "status": "downloaded",
+      "priority": "P1",
+      "group": "spatial_static",
+      "description": "Projected population by District Council District with geometry.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\district_population_projection\\20260330T165218Z_district_population_projection.geojson",
+      "details": {
+        "source_url": "https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Projected_Population_by_District_Council_District_of_Hong_Kong_2021_to_2029/FeatureServer/0",
+        "feature_count": 5,
+        "service_name": "Projected_population_2021"
+      }
+    },
+    {
+      "source_name": "ev_public_chargers",
+      "collected_at_utc": "2026-03-30T16:52:36.673454+00:00",
+      "status": "downloaded",
+      "priority": "P1",
+      "group": "spatial_static",
+      "description": "Public EV chargers with charger counts and location.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\ev_public_chargers\\20260330T165229Z_ev_public_chargers.geojson",
+      "details": {
+        "source_url": "https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Electric_Vehicle_Chargers_for_Public_Access_in_Hong_Kong_gdb/FeatureServer/0",
+        "feature_count": 5,
+        "service_name": " Electric Vehicle Chargers for Public Access in Hong Kong"
+      }
+    },
+    {
+      "source_name": "building_footprints",
+      "collected_at_utc": "2026-03-30T16:52:47.493169+00:00",
+      "status": "downloaded",
+      "priority": "P2",
+      "group": "spatial_static",
+      "description": "Building footprint polygons from LandsD via ArcGIS feature service. Large dataset.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\building_footprints\\20260330T165236Z_building_footprints.geojson",
+      "details": {
+        "source_url": "https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Building_view/FeatureServer/38",
+        "feature_count": 5,
+        "service_name": "Building"
+      }
+    }
+  ]
+}

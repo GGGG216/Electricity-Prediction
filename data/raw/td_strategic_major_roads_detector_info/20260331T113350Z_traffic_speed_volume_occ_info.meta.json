@@ -1,0 +1,14 @@
+{
+  "source_name": "td_strategic_major_roads_detector_info",
+  "collected_at_utc": "2026-03-31T11:33:54.491086+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "mobility",
+  "description": "Detector metadata for the strategic and major roads feed.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\td_strategic_major_roads_detector_info\\20260331T113350Z_traffic_speed_volume_occ_info.csv",
+  "details": {
+    "bytes_written": 169339,
+    "content_type": "text/csv",
+    "source_url": "https://static.data.gov.hk/td/traffic-data-strategic-major-roads/info/traffic_speed_volume_occ_info.csv"
+  }
+}

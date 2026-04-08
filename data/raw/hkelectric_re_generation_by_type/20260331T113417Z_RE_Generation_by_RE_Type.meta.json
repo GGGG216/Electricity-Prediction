@@ -1,0 +1,14 @@
+{
+  "source_name": "hkelectric_re_generation_by_type",
+  "collected_at_utc": "2026-03-31T11:34:20.425120+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "energy_proxies",
+  "description": "HK Electric renewable generation amount by renewable energy type.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\hkelectric_re_generation_by_type\\20260331T113417Z_RE_Generation_by_RE_Type.csv",
+  "details": {
+    "bytes_written": 18565,
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "source_url": "https://www.hkelectric.com/Documents/en/CustomerServices/SmartPowerServices/Documents/RE%20Generation%20by%20RE%20Type.csv"
+  }
+}

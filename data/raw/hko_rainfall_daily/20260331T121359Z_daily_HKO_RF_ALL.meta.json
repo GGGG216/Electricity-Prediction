@@ -1,0 +1,14 @@
+{
+  "source_name": "hko_rainfall_daily",
+  "collected_at_utc": "2026-03-31T12:14:03.284452+00:00",
+  "status": "downloaded",
+  "priority": "P0",
+  "group": "core_exogenous",
+  "description": "Hong Kong Observatory daily rainfall at HKO station.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\hko_rainfall_daily\\20260331T121359Z_daily_HKO_RF_ALL.csv",
+  "details": {
+    "bytes_written": 808076,
+    "content_type": "application/octet-stream, text/csv",
+    "source_url": "https://data.weather.gov.hk/weatherAPI/cis/csvfile/HKO/ALL/daily_HKO_RF_ALL.csv"
+  }
+}

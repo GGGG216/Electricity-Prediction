@@ -1,0 +1,14 @@
+{
+  "source_name": "building_footprints",
+  "collected_at_utc": "2026-04-02T02:54:08.742713+00:00",
+  "status": "downloaded",
+  "priority": "P2",
+  "group": "spatial_static",
+  "description": "Building footprint polygons from LandsD via ArcGIS feature service. Large dataset.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\building_footprints\\20260402T014234Z_building_footprints.geojson",
+  "details": {
+    "source_url": "https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Building_view/FeatureServer/38",
+    "feature_count": 338239,
+    "service_name": "Building"
+  }
+}

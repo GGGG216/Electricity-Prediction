@@ -1,0 +1,988 @@
+{
+  "header": {
+    "status": {
+      "name": "Success",
+      "code": 0,
+      "description": "Query success",
+      "apiHelp": "https://www.censtatd.gov.hk/en/web_table.html?id=915-91204&api_popup=1"
+    },
+    "title": "Generating capacity and peak demand of electricity and gas",
+    "tablenote": [
+      "1 terajoule = 1012joules.  1 megawatt = 106watts.",
+      "For Electricity: Refers to the average of the daily maxima during the year. For Gas: Refers to the maximum installed generating capacity, as of end of year.",
+      "Electricity companies' peak demands in a year do not necessarily occur at the same time. As a broad indicator, the aggregate peak demand is taken to be the arithmetic sum of individual peak demands of the two electricity companies.  As for gas company, peak demand in a year refers to the figure of the day with peak demand.",
+      "Electricity and gas production includes electricity and gas imported from Chinese Mainland (if any).",
+      "\"Annual production for the year, measured in terajoule\" divided by \"Installed capacity, measured in terajoule per day x 365 (or 366)\" times 100%.",
+      "\"Annual production for the year, measured in terajoule\" divided by \"Peak demand within the year, measured in terajoule per day x 365 (or 366)\" times 100%."
+    ],
+    "source": "CLP Power Hong Kong Limited, The Hongkong Electric Company, Limited and The Hong Kong and China Gas Company Limited",
+    "count": {
+      "noOfRecords": 96,
+      "started": "2026-03-31T11:34:16+00:00",
+      "finished": "2026-03-31T11:34:16+00:00",
+      "durationSeconds": 0.004844
+    }
+  },
+  "dataSet": [
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2013",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 12625,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2014",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 12625,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2015",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 12625,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2016",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 12650,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2017",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 12492,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2018",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 12282,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2019",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 12225,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2020",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 13129,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2021",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 13240,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2022",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 13274,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2023",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 13050,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2024",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Megawatt",
+      "figure": 12369,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2013",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 211.7,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2014",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 211.7,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2015",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 217.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2016",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 217.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2017",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 217.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2018",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 217.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2019",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 217.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2020",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 217.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2021",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 221.4,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2022",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 221.4,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2023",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 221.4,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2024",
+      "sv": "MAX_GEN_CAP",
+      "svDesc": "Terajoule per day",
+      "figure": 221.4,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2013",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 10068,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2014",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 9962,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2015",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 10009,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2016",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 9937,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2017",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 10696,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2018",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 9692,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2019",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 9601,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2020",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 9670,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2021",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 9942,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2022",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 10104,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2023",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 9721,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2024",
+      "sv": "PEAK_DEM",
+      "svDesc": "Megawatt",
+      "figure": 9591,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2013",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 108.3,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2014",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 113.2,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2015",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 106.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2016",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 120.1,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2017",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 106.6,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2018",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 125.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2019",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 104.3,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2020",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 100.8,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2021",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 111.6,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2022",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 112.1,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2023",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 111.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2024",
+      "sv": "PEAK_DEM",
+      "svDesc": "Terajoule per day",
+      "figure": 111.1,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2013",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 176517,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2013",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 28556,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2014",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 180329,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2014",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 28835,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2015",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 178797,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2015",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 28403,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2016",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 179191,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2016",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 28814,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2017",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 178176,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2017",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 29049,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2018",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 176611,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2018",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 29550,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2019",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 177033,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2019",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 28712,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2020",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 172023,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2020",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 27947,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2021",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 178301,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2021",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 27677,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2022",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 174380,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2022",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 27398,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2023",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 176820,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2023",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 27125,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "ELEC",
+      "PROD_TYPEDesc": "Electricity",
+      "freq": "Y",
+      "period": "2024",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 179590,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2024",
+      "sv": "PROD",
+      "svDesc": "Terajoule",
+      "figure": 27159,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2013",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 37,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2014",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 37.3,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2015",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 35.8,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2016",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 36.2,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2017",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 36.6,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2018",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 37.2,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2019",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 36.2,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2020",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 35.1,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2021",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 34.2,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2022",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 33.9,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2023",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 33.6,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2024",
+      "sv": "PLANT_FACTOR",
+      "svDesc": "(%)",
+      "figure": 33.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2013",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 72.3,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2014",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 69.8,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2015",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 73.1,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2016",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 65.6,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2017",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 74.7,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2018",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 64.5,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2019",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 75.4,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2020",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 75.8,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2021",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 67.9,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2022",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 66.9,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2023",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 66.6,
+      "sd_value": ""
+    },
+    {
+      "PROD_TYPE": "GAS",
+      "PROD_TYPEDesc": "Gas",
+      "freq": "Y",
+      "period": "2024",
+      "sv": "LOAD_FACTOR",
+      "svDesc": "(%)",
+      "figure": 66.8,
+      "sd_value": ""
+    }
+  ]
+}

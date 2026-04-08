@@ -1,0 +1,14 @@
+{
+  "source_name": "td_monthly_public_transport",
+  "collected_at_utc": "2026-03-31T11:33:59.251709+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "mobility",
+  "description": "Monthly average daily passenger journeys by public transport mode.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\td_monthly_public_transport\\20260331T113354Z_table21s_eng.csv",
+  "details": {
+    "bytes_written": 127442,
+    "content_type": "text/csv",
+    "source_url": "https://www.td.gov.hk/datagovhk_tis/mttd-csv/en/table21s_eng.csv"
+  }
+}

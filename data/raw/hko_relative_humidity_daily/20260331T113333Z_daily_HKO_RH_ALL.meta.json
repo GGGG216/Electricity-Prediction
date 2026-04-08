@@ -1,0 +1,14 @@
+{
+  "source_name": "hko_relative_humidity_daily",
+  "collected_at_utc": "2026-03-31T11:33:37.198896+00:00",
+  "status": "downloaded",
+  "priority": "P0",
+  "group": "core_exogenous",
+  "description": "Hong Kong Observatory daily mean relative humidity at HKO station.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\hko_relative_humidity_daily\\20260331T113333Z_daily_HKO_RH_ALL.csv",
+  "details": {
+    "bytes_written": 432705,
+    "content_type": "application/octet-stream, text/csv",
+    "source_url": "https://data.weather.gov.hk/weatherAPI/cis/csvfile/HKO/ALL/daily_HKO_RH_ALL.csv"
+  }
+}

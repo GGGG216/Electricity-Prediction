@@ -1,0 +1,97 @@
+﻿prod_type,prod_typedesc,freq,period,sv,svdesc,figure,sd_value,table_title,source_name
+ELEC,Electricity,Y,2013,MAX_GEN_CAP,Megawatt,12625.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2014,MAX_GEN_CAP,Megawatt,12625.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2015,MAX_GEN_CAP,Megawatt,12625.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2016,MAX_GEN_CAP,Megawatt,12650.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2017,MAX_GEN_CAP,Megawatt,12492.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2018,MAX_GEN_CAP,Megawatt,12282.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2019,MAX_GEN_CAP,Megawatt,12225.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2020,MAX_GEN_CAP,Megawatt,13129.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2021,MAX_GEN_CAP,Megawatt,13240.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2022,MAX_GEN_CAP,Megawatt,13274.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2023,MAX_GEN_CAP,Megawatt,13050.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2024,MAX_GEN_CAP,Megawatt,12369.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2013,MAX_GEN_CAP,Terajoule per day,211.7,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2014,MAX_GEN_CAP,Terajoule per day,211.7,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2015,MAX_GEN_CAP,Terajoule per day,217.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2016,MAX_GEN_CAP,Terajoule per day,217.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2017,MAX_GEN_CAP,Terajoule per day,217.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2018,MAX_GEN_CAP,Terajoule per day,217.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2019,MAX_GEN_CAP,Terajoule per day,217.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2020,MAX_GEN_CAP,Terajoule per day,217.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2021,MAX_GEN_CAP,Terajoule per day,221.4,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2022,MAX_GEN_CAP,Terajoule per day,221.4,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2023,MAX_GEN_CAP,Terajoule per day,221.4,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2024,MAX_GEN_CAP,Terajoule per day,221.4,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2013,PEAK_DEM,Megawatt,10068.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2014,PEAK_DEM,Megawatt,9962.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2015,PEAK_DEM,Megawatt,10009.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2016,PEAK_DEM,Megawatt,9937.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2017,PEAK_DEM,Megawatt,10696.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2018,PEAK_DEM,Megawatt,9692.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2019,PEAK_DEM,Megawatt,9601.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2020,PEAK_DEM,Megawatt,9670.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2021,PEAK_DEM,Megawatt,9942.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2022,PEAK_DEM,Megawatt,10104.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2023,PEAK_DEM,Megawatt,9721.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2024,PEAK_DEM,Megawatt,9591.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2013,PEAK_DEM,Terajoule per day,108.3,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2014,PEAK_DEM,Terajoule per day,113.2,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2015,PEAK_DEM,Terajoule per day,106.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2016,PEAK_DEM,Terajoule per day,120.1,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2017,PEAK_DEM,Terajoule per day,106.6,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2018,PEAK_DEM,Terajoule per day,125.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2019,PEAK_DEM,Terajoule per day,104.3,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2020,PEAK_DEM,Terajoule per day,100.8,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2021,PEAK_DEM,Terajoule per day,111.6,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2022,PEAK_DEM,Terajoule per day,112.1,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2023,PEAK_DEM,Terajoule per day,111.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2024,PEAK_DEM,Terajoule per day,111.1,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2013,PROD,Terajoule,176517.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2013,PROD,Terajoule,28556.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2014,PROD,Terajoule,180329.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2014,PROD,Terajoule,28835.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2015,PROD,Terajoule,178797.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2015,PROD,Terajoule,28403.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2016,PROD,Terajoule,179191.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2016,PROD,Terajoule,28814.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2017,PROD,Terajoule,178176.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2017,PROD,Terajoule,29049.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2018,PROD,Terajoule,176611.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2018,PROD,Terajoule,29550.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2019,PROD,Terajoule,177033.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2019,PROD,Terajoule,28712.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2020,PROD,Terajoule,172023.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2020,PROD,Terajoule,27947.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2021,PROD,Terajoule,178301.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2021,PROD,Terajoule,27677.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2022,PROD,Terajoule,174380.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2022,PROD,Terajoule,27398.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2023,PROD,Terajoule,176820.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2023,PROD,Terajoule,27125.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+ELEC,Electricity,Y,2024,PROD,Terajoule,179590.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2024,PROD,Terajoule,27159.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2013,PLANT_FACTOR,(%),37.0,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2014,PLANT_FACTOR,(%),37.3,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2015,PLANT_FACTOR,(%),35.8,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2016,PLANT_FACTOR,(%),36.2,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2017,PLANT_FACTOR,(%),36.6,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2018,PLANT_FACTOR,(%),37.2,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2019,PLANT_FACTOR,(%),36.2,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2020,PLANT_FACTOR,(%),35.1,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2021,PLANT_FACTOR,(%),34.2,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2022,PLANT_FACTOR,(%),33.9,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2023,PLANT_FACTOR,(%),33.6,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2024,PLANT_FACTOR,(%),33.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2013,LOAD_FACTOR,(%),72.3,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2014,LOAD_FACTOR,(%),69.8,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2015,LOAD_FACTOR,(%),73.1,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2016,LOAD_FACTOR,(%),65.6,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2017,LOAD_FACTOR,(%),74.7,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2018,LOAD_FACTOR,(%),64.5,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2019,LOAD_FACTOR,(%),75.4,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2020,LOAD_FACTOR,(%),75.8,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2021,LOAD_FACTOR,(%),67.9,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2022,LOAD_FACTOR,(%),66.9,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2023,LOAD_FACTOR,(%),66.6,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual
+GAS,Gas,Y,2024,LOAD_FACTOR,(%),66.8,,Generating capacity and peak demand of electricity and gas,censtatd_peak_demand_annual

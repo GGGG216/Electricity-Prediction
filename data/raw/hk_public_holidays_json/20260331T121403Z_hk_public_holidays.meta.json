@@ -1,0 +1,14 @@
+{
+  "source_name": "hk_public_holidays_json",
+  "collected_at_utc": "2026-03-31T12:14:05.770076+00:00",
+  "status": "downloaded",
+  "priority": "P0",
+  "group": "core_exogenous",
+  "description": "Hong Kong public holidays in JSON format from 1823.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\hk_public_holidays_json\\20260331T121403Z_hk_public_holidays.json",
+  "details": {
+    "bytes_written": 15519,
+    "content_type": "application/json",
+    "source_url": "https://www.1823.gov.hk/common/ical/en.json"
+  }
+}

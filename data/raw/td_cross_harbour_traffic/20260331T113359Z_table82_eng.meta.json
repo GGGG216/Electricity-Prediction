@@ -1,0 +1,14 @@
+{
+  "source_name": "td_cross_harbour_traffic",
+  "collected_at_utc": "2026-03-31T11:34:02.773417+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "mobility",
+  "description": "Monthly cross-harbour road traffic volume table.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\td_cross_harbour_traffic\\20260331T113359Z_table82_eng.csv",
+  "details": {
+    "bytes_written": 128018,
+    "content_type": "text/csv",
+    "source_url": "https://www.td.gov.hk/datagovhk_tis/mttd-csv/en/table82_eng.csv"
+  }
+}

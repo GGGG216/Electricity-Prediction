@@ -1,0 +1,14 @@
+{
+  "source_name": "immd_daily_passenger_traffic",
+  "collected_at_utc": "2026-03-31T11:33:48.165041+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "mobility",
+  "description": "Daily passenger traffic by control point and direction.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\immd_daily_passenger_traffic\\20260331T113344Z_statistics_on_daily_passenger_traffic.csv",
+  "details": {
+    "bytes_written": 3050521,
+    "content_type": "text/csv",
+    "source_url": "https://www.immd.gov.hk/opendata/eng/transport/immigration_clearance/statistics_on_daily_passenger_traffic.csv"
+  }
+}

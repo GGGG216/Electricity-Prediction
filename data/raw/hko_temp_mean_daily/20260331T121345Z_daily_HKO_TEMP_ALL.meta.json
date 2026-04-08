@@ -1,0 +1,14 @@
+{
+  "source_name": "hko_temp_mean_daily",
+  "collected_at_utc": "2026-03-31T12:13:48.999266+00:00",
+  "status": "downloaded",
+  "priority": "P0",
+  "group": "core_exogenous",
+  "description": "Hong Kong Observatory daily mean temperature at HKO station.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\hko_temp_mean_daily\\20260331T121345Z_daily_HKO_TEMP_ALL.csv",
+  "details": {
+    "bytes_written": 835997,
+    "content_type": "application/octet-stream, text/csv",
+    "source_url": "https://data.weather.gov.hk/weatherAPI/cis/csvfile/HKO/ALL/daily_HKO_TEMP_ALL.csv"
+  }
+}

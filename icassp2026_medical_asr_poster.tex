@@ -1,0 +1,209 @@
+
+\documentclass[25pt,a0paper,landscape]{tikzposter}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{amsmath,amssymb,booktabs,array,multirow}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc}
+\usepackage{ragged2e}
+
+\usetheme{Simple}
+
+\definecolor{AccentBlue}{HTML}{0B5FA5}
+\definecolor{AccentTeal}{HTML}{0F8B8D}
+\definecolor{SoftBlue}{HTML}{EAF3FF}
+\definecolor{SoftTeal}{HTML}{E9F9F7}
+\definecolor{SoftGray}{HTML}{F5F7FA}
+\definecolor{DarkGray}{HTML}{2B2B2B}
+
+\colorlet{backgroundcolor}{white}
+\colorlet{framecolor}{AccentBlue}
+\colorlet{titlefgcolor}{white}
+\colorlet{titlebgcolor}{AccentBlue}
+\colorlet{blocktitlebgcolor}{AccentBlue}
+\colorlet{blocktitlefgcolor}{white}
+\colorlet{blockbodybgcolor}{SoftGray}
+\colorlet{blockbodyfgcolor}{DarkGray}
+\colorlet{innerblocktitlebgcolor}{AccentTeal}
+\colorlet{innerblocktitlefgcolor}{white}
+\colorlet{innerblockbodybgcolor}{SoftTeal}
+\colorlet{innerblockbodyfgcolor}{DarkGray}
+\colorlet{notefgcolor}{DarkGray}
+\colorlet{notebgcolor}{SoftBlue}
+\colorlet{noteframecolor}{AccentBlue}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.25em,topsep=0.25em}
+
+\def\TP@titletextscale{0.68}
+% You can replace this with the exact paper title if you prefer.
+\title{MEDICAL ASR WITH MEDICAL-AWARE REINFORCEMENT FINE-TUNING}
+\author{Congjie Wang (1) \quad Xiaofan Ye (4) \quad Jinlin Wu (2,3) \quad Dong Yi (2) \quad Zhen Lei (2,3) \quad Wai S.~Poon (4) \quad Hongbin Liu (2)}
+\institute{(1) The University of Hong Kong \qquad (2) CAIR, Chinese Academy of Sciences \qquad (3) MAIS, Institute of Automation, CAS \qquad (4) HKU-Shenzhen Hospital}
+
+\begin{document}
+\maketitle
+
+\block{TAKE-HOME MESSAGE}{
+\textbf{Problem:} Standard ASR under-weights rare but clinically critical medical terms. \quad
+\textbf{Solution:} Medical-aware reinforcement fine-tuning with multi-hypothesis decoding, GPT-4o term proposal, UMLS grounding, and DPO. \quad
+\textbf{Outcome:} Better medical term recognition with strong cross-dataset generalization.
+}
+
+\block{PROPOSED FRAMEWORK}{
+\begin{itemize}
+    \item \textbf{Step 1:} generate multiple candidate transcriptions for each utterance using diverse Whisper decoding strategies.
+    \item \textbf{Step 2:} use GPT-4o to propose candidate medical terms from each transcript.
+    \item \textbf{Step 3:} validate and normalize the extracted terms with UMLS.
+    \item \textbf{Step 4:} score each hypothesis with a composite reward combining WER, MWER, and length regularization.
+    \item \textbf{Step 5:} create preference pairs and update the ASR model with DPO.
+\end{itemize}
+}
+
+\begin{columns}
+\column{0.32}
+
+\block{MOTIVATION \& CONTRIBUTIONS}{
+\begin{itemize}
+    \item \textbf{Why medical ASR is hard:} fluent transcripts can still contain dangerous errors in drug names, dosages, anatomy, and abbreviations.
+    \item \textbf{Key limitation of standard training:} sequence-level cross-entropy optimizes every token equally, so rare domain-critical terms are under-emphasized.
+    \item \textbf{Our contributions:}
+    \begin{itemize}
+        \item medical-aware reinforcement fine-tuning (RFT) for ASR;
+        \item a composite reward that combines \textbf{WER + MWER + length regularization};
+        \item GPT-4o high-recall term proposal with \textbf{UMLS} precision filtering;
+        \item preference-based optimization that improves specialized vocabulary while maintaining fluency.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Design principle:} use domain knowledge only during training; at inference time, decode with a standard single-hypothesis ASR model.
+}
+
+\block{MEDICAL-AWARE REWARD}{
+For a hypothesis $h_i$ and reference $r$, the reward is
+\[
+R(h_i,r) = (1-\lambda)\big[\mathrm{WERScore}(h_i,r)\cdot L(h_i,r)\big] + \lambda\,\mathrm{MedScore}(h_i,r),
+\]
+where
+\[
+\mathrm{WERScore}(h_i,r)=1-\min(\mathrm{WER}(h_i,r),1.0),
+\]
+\[
+\mathrm{MedScore}(h_i,r)=1-\min(\mathrm{MWER}(h_i,r),1.0),
+\]
+\[
+L(h_i,r)=\left(\min\left(\frac{|h_i|}{|r|},\frac{|r|}{|h_i|}\right)\right)^{0.5}.
+\]
+
+\begin{itemize}
+    \item \textbf{WERScore} preserves general transcription quality.
+    \item \textbf{MedScore} explicitly rewards accurate medical terminology after UMLS filtering.
+    \item \textbf{Length factor} suppresses abnormal-length outputs and stabilizes preference construction.
+\end{itemize}
+}
+
+\column{0.32}
+
+\block{PREFERENCE OPTIMIZATION}{
+\begin{itemize}
+    \item Generate $K$ hypotheses for each utterance.
+    \item Rank them using the composite reward.
+    \item Build a preference pair $(h^+, h^-)$ only when the reward gap exceeds a margin $\delta = 0.1$.
+    \item Optimize with \textbf{Direct Preference Optimization (DPO)} against a frozen reference policy.
+\end{itemize}
+
+\[
+\mathcal{L}_{\mathrm{DPO}}
+=
+-\log \sigma\!\left(
+\beta \log \frac{\pi(h^+|x)}{\pi_{\mathrm{ref}}(h^+|x)}
+-
+\beta \log \frac{\pi(h^-|x)}{\pi_{\mathrm{ref}}(h^-|x)}
+\right)
+\]
+
+\begin{itemize}
+    \item This directly encourages the ASR model to prefer hypotheses with better clinical content.
+    \item The method avoids relying on a post-hoc LLM correction stage at inference time.
+\end{itemize}
+}
+
+\block{EXPERIMENTAL SETUP}{
+\textbf{Backbone:} Whisper-small
+
+\textbf{Training data:} English split of \textbf{MultiMed}
+
+\textbf{External evaluation:}
+\begin{itemize}
+    \item \textbf{Ankit} English medical ASR test split
+    \item \textbf{Macabdul} MedicalASR evaluation set
+\end{itemize}
+
+\textbf{Implementation details:}
+\begin{itemize}
+    \item GPT-4o assists only with medical-term extraction during training
+    \item DPO scale $\beta = 0.1$
+    \item learning rate $= 1\times10^{-5}$
+    \item $\lambda$ gradually increased from $0.1$ to $0.3$
+    \item audio length capped at 30 seconds
+\end{itemize}
+
+\textbf{Metrics:}
+\begin{itemize}
+    \item \textbf{WER}: word error rate
+    \item \textbf{MWER}: medical word error rate
+\end{itemize}
+}
+
+\column{0.32}
+
+\block{RESULTS}{
+\centering
+\renewcommand{\arraystretch}{1.18}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{lcccccc}
+\toprule
+\multirow{2}{*}{\textbf{Model}} & \multicolumn{2}{c}{\textbf{MultiMed}} & \multicolumn{2}{c}{\textbf{Ankit}} & \multicolumn{2}{c}{\textbf{Macabdul}} \\
+ & \textbf{WER} & \textbf{MWER} & \textbf{WER} & \textbf{MWER} & \textbf{WER} & \textbf{MWER} \\
+\midrule
+Whisper & 0.2140 & 0.1243 & 0.2018 & 0.1172 & 0.1722 & 0.0930 \\
+Whisper + GPT-4o & 0.1780 & 0.1094 & 0.1990 & 0.1107 & 0.1654 & 0.0916 \\
+SFT & 0.1517 & 0.0934 & 0.2140 & 0.1323 & 0.2013 & 0.1149 \\
+RFT ($\lambda=0$) & 0.1822 & 0.0954 & 0.1980 & 0.1152 & 0.1760 & 0.0930 \\
+\rowcolor{SoftBlue}
+\textbf{RFT + Med-reward} & \textbf{0.1474} & \textbf{0.0865} & \textbf{0.1917} & \textbf{0.1055} & \textbf{0.1670} & \textbf{0.0892} \\
+\bottomrule
+\end{tabular}
+}
+}
+
+\block{KEY FINDINGS}{
+\begin{itemize}
+    \item \textbf{In-domain gain:} on MultiMed, the proposed method reaches the best \textbf{WER = 0.1474} and \textbf{MWER = 0.0865}.
+    \item \textbf{Cross-dataset robustness:} compared with SFT, MWER drops from \textbf{0.1323 to 0.1055} on Ankit (\textbf{20.3\% relative reduction}) and from \textbf{0.1149 to 0.0892} on Macabdul (\textbf{22.4\% relative reduction}).
+    \item \textbf{Why it matters:} generic RFT alone is not enough; explicit medical-domain reward is the critical ingredient.
+\end{itemize}
+}
+
+\block{CONCLUSION}{
+\begin{itemize}
+    \item Medical-aware RFT improves recognition of domain-critical terminology without sacrificing overall transcription quality.
+    \item The method generalizes better than plain supervised fine-tuning on unseen medical datasets.
+    \item \textbf{Future work:} leverage large-scale unlabeled medical audio and stronger medical NER / terminology grounding.
+\end{itemize}
+
+\textbf{Poster pitch tip:} prepare a 5--10 minute explanation focused on the key innovation, reward design, and cross-dataset results.
+}
+
+\end{columns}
+
+\end{document}

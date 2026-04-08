@@ -1,0 +1,14 @@
+{
+  "source_name": "district_population_projection",
+  "collected_at_utc": "2026-03-31T11:34:31.549550+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "spatial_static",
+  "description": "Projected population by District Council District with geometry.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\district_population_projection\\20260331T113420Z_district_population_projection.geojson",
+  "details": {
+    "source_url": "https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Projected_Population_by_District_Council_District_of_Hong_Kong_2021_to_2029/FeatureServer/0",
+    "feature_count": 18,
+    "service_name": "Projected_population_2021"
+  }
+}

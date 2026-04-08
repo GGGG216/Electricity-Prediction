@@ -1,0 +1,30 @@
+{
+  "input_path": "D:\\= =\\3544\\project\\data\\model\\city_monthly_training_runs\\predictions.csv",
+  "actual_col": "target_electricity_total_t_plus_1m",
+  "prediction_cols": [
+    "pred_naive_same_month_last_year",
+    "pred_ridge",
+    "pred_random_forest"
+  ],
+  "overall": {
+    "pred_naive_same_month_last_year": {
+      "mae": 1210.5656000000001,
+      "rmse": 1396.1708410533113,
+      "r2": 0.705429443131802,
+      "row_count": 32
+    },
+    "pred_ridge": {
+      "mae": 928.354353774701,
+      "rmse": 1375.5510106238044,
+      "r2": 0.7140661254212611,
+      "row_count": 32
+    },
+    "pred_random_forest": {
+      "mae": 456.9334541434892,
+      "rmse": 609.7891987400646,
+      "r2": 0.9438083657038431,
+      "row_count": 32
+    }
+  },
+  "by_group": {}
+}

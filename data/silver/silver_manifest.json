@@ -1,0 +1,24 @@
+{
+  "built": {
+    "weather_monthly": 1622,
+    "calendar_monthly": 1716,
+    "immigration_city_monthly": 63,
+    "transport_public_mode_monthly": 2638,
+    "transport_public_total_monthly": 157,
+    "transport_public_mode_wide_monthly": 157,
+    "transport_cross_harbour_monthly": 157,
+    "censtatd_energy_use_monthly": 6130,
+    "censtatd_local_consumption_revenue_quarterly": 1134,
+    "censtatd_peak_demand_annual": 96,
+    "censtatd_energy_stats_tidy": 7360,
+    "city_energy_monthly_detail": 5660,
+    "city_energy_monthly": 566,
+    "hkelectric_re_generation_monthly": 61,
+    "city_population_yearly": 11,
+    "ev_city_static": 1,
+    "building_footprints_city_static": 1,
+    "city_monthly_model_features": 566,
+    "city_monthly_train_ready": 157
+  },
+  "skipped": []
+}

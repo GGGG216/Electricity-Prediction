@@ -1,0 +1,14 @@
+{
+  "source_name": "hko_temp_max_daily",
+  "collected_at_utc": "2026-03-31T12:13:52.684928+00:00",
+  "status": "downloaded",
+  "priority": "P0",
+  "group": "core_exogenous",
+  "description": "Hong Kong Observatory daily maximum temperature at HKO station.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\hko_temp_max_daily\\20260331T121348Z_daily_HKO_MAXT_ALL.csv",
+  "details": {
+    "bytes_written": 837281,
+    "content_type": "application/octet-stream, text/csv",
+    "source_url": "https://data.weather.gov.hk/weatherAPI/cis/csvfile/HKO/ALL/daily_HKO_MAXT_ALL.csv"
+  }
+}

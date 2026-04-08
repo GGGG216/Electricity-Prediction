@@ -1,0 +1,17 @@
+{
+  "source_name": "censtatd_energy_use_monthly",
+  "collected_at_utc": "2026-03-31T12:14:28.205471+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "energy_proxies",
+  "description": "Monthly electricity and gas consumption by user type.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\censtatd_energy_use_monthly\\20260331T121422Z_censtatd_915_91201.json",
+  "details": {
+    "source_url": "https://www.censtatd.gov.hk/api/get.php",
+    "table_id": "915-91201",
+    "top_level_keys": [
+      "dataSet",
+      "header"
+    ]
+  }
+}

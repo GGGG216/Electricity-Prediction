@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
-data/raw/
-data/silver/
-data/model/
+data/raw/All_Data.zip
+data/raw/building_footprints/20260331T122348Z_building_footprints.geojson
+data/raw/building_footprints/20260402T014234Z_building_footprints.geojson
 data/manual/*.csv
 ~$*

@@ -1,0 +1,238 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.963495957438,
+              22.4081308271987
+            ],
+            [
+              113.963476665932,
+              22.4081247405875
+            ],
+            [
+              113.963438463251,
+              22.40814086884
+            ],
+            [
+              113.963444224695,
+              22.4081526675052
+            ],
+            [
+              113.963481043909,
+              22.4082280685338
+            ],
+            [
+              113.963532776772,
+              22.4082062282161
+            ],
+            [
+              113.963495957438,
+              22.4081308271987
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "OBJECTID": 1,
+        "LASTUPDATEDATE": 1404172800000,
+        "BUILDINGID": 1108522404,
+        "TYPEOFBUILDINGBLOCK": "T",
+        "BASELEVEL": 16.9,
+        "ROOFLEVEL": 21.3,
+        "BASELEVELDATASOURCE": 5,
+        "ROOFLEVELDATASOURCE": 4,
+        "BUILDINGSTATUS": "E",
+        "CERTAINTY": 1,
+        "Shape__Area": 71.640625,
+        "Shape__Length": 34.75685791963391
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.978965115789,
+              22.4031947240359
+            ],
+            [
+              113.978957336752,
+              22.4031543413954
+            ],
+            [
+              113.978823955627,
+              22.4031765566518
+            ],
+            [
+              113.978831734627,
+              22.4032169392983
+            ],
+            [
+              113.978965115789,
+              22.4031947240359
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "OBJECTID": 2,
+        "LASTUPDATEDATE": 1404172800000,
+        "BUILDINGID": 1108523034,
+        "TYPEOFBUILDINGBLOCK": "T",
+        "BASELEVEL": 15.5,
+        "ROOFLEVEL": 18,
+        "BASELEVELDATASOURCE": 5,
+        "ROOFLEVELDATASOURCE": 5,
+        "BUILDINGSTATUS": "E",
+        "CERTAINTY": 1,
+        "Shape__Area": 74.509765625,
+        "Shape__Length": 40.051621557582436
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.973561017042,
+              22.4033073805824
+            ],
+            [
+              113.973542410891,
+              22.4032595770233
+            ],
+            [
+              113.973443885729,
+              22.4032926671301
+            ],
+            [
+              113.973461138571,
+              22.4033427717649
+            ],
+            [
+              113.973561017042,
+              22.4033073805824
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "OBJECTID": 3,
+        "LASTUPDATEDATE": 1404172800000,
+        "BUILDINGID": 1108523019,
+        "TYPEOFBUILDINGBLOCK": "T",
+        "BASELEVEL": 7.4,
+        "ROOFLEVEL": 12.3,
+        "BASELEVELDATASOURCE": 5,
+        "ROOFLEVELDATASOURCE": 4,
+        "BUILDINGSTATUS": "E",
+        "CERTAINTY": 1,
+        "Shape__Area": 73.322265625,
+        "Shape__Length": 36.02463320004042
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.988133280957,
+              22.4704831124987
+            ],
+            [
+              113.988172310241,
+              22.4704197106331
+            ],
+            [
+              113.988102910259,
+              22.4703877792478
+            ],
+            [
+              113.98806511299,
+              22.4704526183709
+            ],
+            [
+              113.988133280957,
+              22.4704831124987
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "OBJECTID": 4,
+        "LASTUPDATEDATE": 1404172800000,
+        "BUILDINGID": 1105710522,
+        "TYPEOFBUILDINGBLOCK": "OS",
+        "BASELEVEL": null,
+        "ROOFLEVEL": null,
+        "BASELEVELDATASOURCE": 4,
+        "ROOFLEVELDATASOURCE": 4,
+        "BUILDINGSTATUS": "E",
+        "CERTAINTY": 1,
+        "Shape__Area": 75.22265625,
+        "Shape__Length": 34.7201488170362
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.066295379002,
+              22.4704821386817
+            ],
+            [
+              114.066291536138,
+              22.4705246393164
+            ],
+            [
+              114.06637189777,
+              22.470530915701
+            ],
+            [
+              114.066375740707,
+              22.4704884150643
+            ],
+            [
+              114.066295379002,
+              22.4704821386817
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "OBJECTID": 5,
+        "LASTUPDATEDATE": 1404172800000,
+        "BUILDINGID": 1105710546,
+        "TYPEOFBUILDINGBLOCK": "OS",
+        "BASELEVEL": null,
+        "ROOFLEVEL": null,
+        "BASELEVELDATASOURCE": 4,
+        "ROOFLEVELDATASOURCE": 4,
+        "BUILDINGSTATUS": "E",
+        "CERTAINTY": 1,
+        "Shape__Area": 46.123046875,
+        "Shape__Length": 28.23084755228934
+      }
+    }
+  ]
+}

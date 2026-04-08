@@ -1,0 +1,175 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.149439,
+          22.270535
+        ]
+      },
+      "properties": {
+        "OBJECTID": 1,
+        "NAME_OF_DISTRICT_COUNCIL_DISTRI": "Central & Western",
+        "LOCATION_EN": "The Peak Galleria",
+        "ADDRESS_EN": "118 Peak Rd, The Peak",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_1": "中西區",
+        "LOCATION_TC": "山頂廣場",
+        "ADDRESS_TC": "山頂道118號",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_2": "中西区",
+        "LOCATION_SC": "山顶广场",
+        "ADDRESS_SC": "山顶道118号",
+        "STANDARD_BS1363_no": "0",
+        "MEDIUM_IEC62196_no": "6",
+        "MEDIUM_SAEJ1772_no": "0",
+        "MEDIUM_OTHERS_no": "0",
+        "QUICK_CHAdeMO_no": "0",
+        "QUICK_CCS_DC_COMBO_no": "0",
+        "QUICK_IEC62196_no": "0",
+        "QUICK_GB_T20234_3_DC__no": "0",
+        "QUICK_OTHERS_no": "0",
+        "REMARK_FOR__OTHERS_": "Tesla Wall Connector",
+        "DATA_PATH": "-"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.154652,
+          22.2806190000001
+        ]
+      },
+      "properties": {
+        "OBJECTID": 2,
+        "NAME_OF_DISTRICT_COUNCIL_DISTRI": "Central & Western",
+        "LOCATION_EN": "The Centrium",
+        "ADDRESS_EN": "60 Wyndham Street, Central",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_1": "中西區",
+        "LOCATION_TC": "中央廣場",
+        "ADDRESS_TC": "中環雲咸街60號",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_2": "中西区",
+        "LOCATION_SC": "中央广场",
+        "ADDRESS_SC": "中环云咸街60号",
+        "STANDARD_BS1363_no": "2",
+        "MEDIUM_IEC62196_no": "2",
+        "MEDIUM_SAEJ1772_no": "0",
+        "MEDIUM_OTHERS_no": "0",
+        "QUICK_CHAdeMO_no": "0",
+        "QUICK_CCS_DC_COMBO_no": "0",
+        "QUICK_IEC62196_no": "0",
+        "QUICK_GB_T20234_3_DC__no": "0",
+        "QUICK_OTHERS_no": "0",
+        "REMARK_FOR__OTHERS_": "-",
+        "DATA_PATH": "-"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.161262,
+          22.2786530000001
+        ]
+      },
+      "properties": {
+        "OBJECTID": 3,
+        "NAME_OF_DISTRICT_COUNCIL_DISTRI": "Central & Western",
+        "LOCATION_EN": "Three Garden Road Carpark",
+        "ADDRESS_EN": "GARDEN ROAD",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_1": "中西區",
+        "LOCATION_TC": "花園道三號停車場",
+        "ADDRESS_TC": "花園道",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_2": "中西区",
+        "LOCATION_SC": "花园道三号停车场",
+        "ADDRESS_SC": "花园道",
+        "STANDARD_BS1363_no": "3",
+        "MEDIUM_IEC62196_no": "20",
+        "MEDIUM_SAEJ1772_no": "0",
+        "MEDIUM_OTHERS_no": "2",
+        "QUICK_CHAdeMO_no": "0",
+        "QUICK_CCS_DC_COMBO_no": "0",
+        "QUICK_IEC62196_no": "0",
+        "QUICK_GB_T20234_3_DC__no": "0",
+        "QUICK_OTHERS_no": "0",
+        "REMARK_FOR__OTHERS_": "-",
+        "DATA_PATH": "-"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.156934,
+          22.2803230000001
+        ]
+      },
+      "properties": {
+        "OBJECTID": 4,
+        "NAME_OF_DISTRICT_COUNCIL_DISTRI": "Central & Western",
+        "LOCATION_EN": "NEW WORLD TOWER",
+        "ADDRESS_EN": "QUEEN'S ROAD CENTRAL, CENTRAL & WESTERN",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_1": "中西區",
+        "LOCATION_TC": "新世界大廈",
+        "ADDRESS_TC": "中西區 皇后大道中",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_2": "中西区",
+        "LOCATION_SC": "新世界大厦",
+        "ADDRESS_SC": "中西区 皇后大道中",
+        "STANDARD_BS1363_no": "1",
+        "MEDIUM_IEC62196_no": "8",
+        "MEDIUM_SAEJ1772_no": "0",
+        "MEDIUM_OTHERS_no": "0",
+        "QUICK_CHAdeMO_no": "0",
+        "QUICK_CCS_DC_COMBO_no": "4",
+        "QUICK_IEC62196_no": "0",
+        "QUICK_GB_T20234_3_DC__no": "0",
+        "QUICK_OTHERS_no": "0",
+        "REMARK_FOR__OTHERS_": "-",
+        "DATA_PATH": "-"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.16044,
+          22.2827550000001
+        ]
+      },
+      "properties": {
+        "OBJECTID": 5,
+        "NAME_OF_DISTRICT_COUNCIL_DISTRI": "Central & Western",
+        "LOCATION_EN": "Star Ferry Car Park",
+        "ADDRESS_EN": "9 Edinburgh Place, Central, Hong Kong",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_1": "中西區",
+        "LOCATION_TC": "天星停車場",
+        "ADDRESS_TC": "香港中環愛丁堡廣場9號",
+        "NAME_OF_DISTRICT_COUNCIL_DIST_2": "中西区",
+        "LOCATION_SC": "天星停车场",
+        "ADDRESS_SC": "香港中环爱丁堡广场9号",
+        "STANDARD_BS1363_no": "0",
+        "MEDIUM_IEC62196_no": "35",
+        "MEDIUM_SAEJ1772_no": "0",
+        "MEDIUM_OTHERS_no": "0",
+        "QUICK_CHAdeMO_no": "0",
+        "QUICK_CCS_DC_COMBO_no": "0",
+        "QUICK_IEC62196_no": "0",
+        "QUICK_GB_T20234_3_DC__no": "0",
+        "QUICK_OTHERS_no": "0",
+        "REMARK_FOR__OTHERS_": "-",
+        "DATA_PATH": "https://ev-charger.epd.gov.hk/resource/ev_charger_avail/ev_charger_avail.json"
+      }
+    }
+  ]
+}

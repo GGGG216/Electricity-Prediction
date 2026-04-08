@@ -1,0 +1,14 @@
+{
+  "source_name": "ev_public_chargers",
+  "collected_at_utc": "2026-03-31T12:14:59.304596+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "spatial_static",
+  "description": "Public EV chargers with charger counts and location.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\ev_public_chargers\\20260331T121449Z_ev_public_chargers.geojson",
+  "details": {
+    "source_url": "https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Electric_Vehicle_Chargers_for_Public_Access_in_Hong_Kong_gdb/FeatureServer/0",
+    "feature_count": 758,
+    "service_name": " Electric Vehicle Chargers for Public Access in Hong Kong"
+  }
+}
