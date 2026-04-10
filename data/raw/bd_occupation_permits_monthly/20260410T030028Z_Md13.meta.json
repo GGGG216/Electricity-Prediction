@@ -1,0 +1,14 @@
+{
+  "source_name": "bd_occupation_permits_monthly",
+  "collected_at_utc": "2026-04-10T03:00:31.817679+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "spatial_static",
+  "description": "Monthly occupation permits issued by the Building Authority.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\bd_occupation_permits_monthly\\20260410T030028Z_Md13.csv",
+  "details": {
+    "bytes_written": 6552,
+    "content_type": "text/csv",
+    "source_url": "https://static.data.gov.hk/bd/opendata/monthlydigests/Md13.csv"
+  }
+}

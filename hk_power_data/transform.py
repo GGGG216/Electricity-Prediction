@@ -333,6 +333,94 @@ def build_transport_monthly(raw_root: Path = RAW_ROOT) -> dict[str, pd.DataFrame
     return outputs
 
 
+def _build_bd_monthly_from_source(
+    source_name: str,
+    rename_map: dict[str, str],
+    raw_root: Path = RAW_ROOT,
+) -> pd.DataFrame | None:
+    payload = _latest_payload(source_name, raw_root=raw_root)
+    if payload is None:
+        return None
+    frame = pd.read_csv(payload, encoding="utf-8-sig")
+    frame = _normalize_frame_columns(frame)
+    if "year" not in frame.columns or "month" not in frame.columns:
+        return None
+    frame["year"] = pd.to_numeric(frame["year"], errors="coerce")
+    frame["month"] = pd.to_numeric(frame["month"], errors="coerce")
+    frame["period_month"] = pd.to_datetime(
+        dict(year=frame["year"], month=frame["month"], day=1),
+        errors="coerce",
+    )
+    keep_columns = ["period_month"]
+    for source_column, target_column in rename_map.items():
+        if source_column in frame.columns:
+            frame[target_column] = pd.to_numeric(frame[source_column], errors="coerce")
+            keep_columns.append(target_column)
+    out = frame[keep_columns].dropna(subset=["period_month"]).sort_values("period_month").reset_index(drop=True)
+    return out if len(out.columns) > 1 else None
+
+
+def build_building_activity_monthly(raw_root: Path = RAW_ROOT) -> dict[str, pd.DataFrame]:
+    outputs: dict[str, pd.DataFrame] = {}
+
+    consent_monthly = _build_bd_monthly_from_source(
+        "bd_consent_commence_work_monthly",
+        {
+            "demolition_md_5_2": "building_consent_demolition_count",
+            "site_formation": "building_consent_site_formation_count",
+            "foundation": "building_consent_foundation_count",
+            "general_building_superstructure_md5_4": "building_consent_superstructure_count",
+            "total": "building_consent_total_count",
+        },
+        raw_root=raw_root,
+    )
+    if consent_monthly is not None:
+        outputs["building_consent_monthly"] = consent_monthly
+
+    occupation_permits_monthly = _build_bd_monthly_from_source(
+        "bd_occupation_permits_monthly",
+        {
+            "domestic_op_issued": "occupation_permits_domestic_count",
+            "non_domestic_op_issued": "occupation_permits_non_domestic_count",
+            "composite_domestic_non_domestic_op_issued": "occupation_permits_composite_count",
+            "total_op_issued": "occupation_permits_total_count",
+            "total_no_of_domestic_units": "occupation_permits_domestic_units",
+        },
+        raw_root=raw_root,
+    )
+    if occupation_permits_monthly is not None:
+        outputs["occupation_permits_monthly"] = occupation_permits_monthly
+
+    building_completion_monthly = _build_bd_monthly_from_source(
+        "bd_building_completion_monthly",
+        {
+            "domestic_gfa": "building_completion_domestic_gfa",
+            "non_domestic_gfa": "building_completion_non_domestic_gfa",
+            "total_gfa": "building_completion_total_gfa",
+            "domestic_ufa": "building_completion_domestic_ufa",
+            "non_domestic_ufa": "building_completion_non_domestic_ufa",
+            "total_ufa": "building_completion_total_ufa",
+            "total_no_of_domestic_units": "building_completion_domestic_units",
+            "total_declared_building_costs_hk": "building_completion_declared_cost_hkd",
+            "total_declared_building_costs_hk_alteration_and_addition_work": "building_completion_declared_cost_aa_hkd",
+        },
+        raw_root=raw_root,
+    )
+    if building_completion_monthly is not None:
+        outputs["building_completion_monthly"] = building_completion_monthly
+
+    if outputs:
+        merged: pd.DataFrame | None = None
+        for name in ["building_consent_monthly", "occupation_permits_monthly", "building_completion_monthly"]:
+            frame = outputs.get(name)
+            if frame is None:
+                continue
+            merged = frame if merged is None else merged.merge(frame, on="period_month", how="outer")
+        if merged is not None:
+            outputs["building_activity_monthly"] = merged.sort_values("period_month").reset_index(drop=True)
+    return outputs
+
+
 def build_censtatd_tidy(raw_root: Path = RAW_ROOT) -> dict[str, pd.DataFrame]:
     outputs: dict[str, pd.DataFrame] = {}
     for source_name in [
@@ -535,6 +623,7 @@ def build_city_monthly_model_tables(
     calendar_monthly: pd.DataFrame | None,
     immigration_monthly: pd.DataFrame | None,
     transport_tables: dict[str, pd.DataFrame],
+    building_activity_tables: dict[str, pd.DataFrame],
     hkelectric_re_generation_monthly: pd.DataFrame | None,
     city_population_yearly: pd.DataFrame | None,
     ev_city_static: pd.DataFrame | None,
@@ -558,19 +647,20 @@ def build_city_monthly_model_tables(
         transport_tables.get("transport_public_total_monthly"),
         transport_tables.get("transport_public_mode_wide_monthly"),
         transport_tables.get("transport_cross_harbour_monthly"),
+        building_activity_tables.get("building_activity_monthly"),
         hkelectric_re_generation_monthly,
     ]:
         if monthly_frame is not None and not monthly_frame.empty:
             frame = frame.merge(monthly_frame, on="period_month", how="left")
 
     frame = _merge_yearly_features(frame, city_population_yearly)
-    frame = _add_constant_features(frame, ev_city_static)
-    frame = _add_constant_features(frame, building_city_static)
 
     frame["immigration_features_available"] = frame.filter(like="immigration_").notna().any(axis=1).astype(int)
     frame["transport_features_available"] = frame.filter(like="public_transport_").notna().any(axis=1).astype(int)
+    frame["building_activity_features_available"] = frame.filter(like="building_").notna().any(axis=1).astype(int) | frame.filter(like="occupation_permits_").notna().any(axis=1).astype(int)
     frame["re_generation_features_available"] = frame.filter(like="hkelectric_re_generation_").notna().any(axis=1).astype(int)
     frame["population_features_available"] = frame[["population", "population_density_per_km2"]].notna().any(axis=1).astype(int)
+    frame["building_activity_features_available"] = frame["building_activity_features_available"].astype(int)
 
     frame = _add_monthly_lag_features(frame)
     frame = frame.sort_values("period_month").reset_index(drop=True)
@@ -622,6 +712,13 @@ def build_silver_tables(
         outputs["built"][name] = int(len(frame))
     if not transport_tables:
         outputs["skipped"].append("transport_monthly")
+
+    building_activity_tables = build_building_activity_monthly(raw_root=raw_root)
+    for name, frame in building_activity_tables.items():
+        _write_csv(frame, silver_root / f"{name}.csv")
+        outputs["built"][name] = int(len(frame))
+    if not building_activity_tables:
+        outputs["skipped"].append("building_activity_monthly")
 
     censtatd_tables = build_censtatd_tidy(raw_root=raw_root)
     for name, frame in censtatd_tables.items():
@@ -676,6 +773,7 @@ def build_silver_tables(
         calendar_monthly=calendar_monthly,
         immigration_monthly=immigration_monthly,
         transport_tables=transport_tables,
+        building_activity_tables=building_activity_tables,
         hkelectric_re_generation_monthly=hkelectric_re_generation_monthly,
         city_population_yearly=city_population_yearly,
         ev_city_static=ev_city_static,

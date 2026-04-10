@@ -82,14 +82,21 @@ Monthly public transport and cross-harbour traffic are used directly:
 - mode-level passenger proxies
 - cross-harbour passenger totals
 
+### Building activity
+
+Monthly Buildings Department tables are used directly:
+
+- consents to commence work
+- occupation permits issued
+- completion gross floor area and domestic units
+
 ### Spatial and structural features
 
 Slow-moving or static city features are added to every month:
 
 - city population
 - population density
-- EV charger stock
-- building footprint summary
+- building footprint snapshot kept as reference context
 
 ### Time-series history
 

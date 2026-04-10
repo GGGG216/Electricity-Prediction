@@ -1,0 +1,14 @@
+{
+  "source_name": "bd_consent_commence_work_monthly",
+  "collected_at_utc": "2026-04-10T03:00:28.705704+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "spatial_static",
+  "description": "Monthly consents to commence building works issued by the Building Authority.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\bd_consent_commence_work_monthly\\20260410T030025Z_Md12.csv",
+  "details": {
+    "bytes_written": 6343,
+    "content_type": "text/csv",
+    "source_url": "https://static.data.gov.hk/bd/opendata/monthlydigests/Md12.csv"
+  }
+}

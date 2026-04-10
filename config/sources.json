@@ -183,6 +183,42 @@
     "source_page": "https://data.gov.hk/en-data/dataset/hkelectric-cs_cbd-renewable-energy-generation-by-renewable-energy-type"
   },
   {
+    "name": "bd_consent_commence_work_monthly",
+    "kind": "static_url",
+    "group": "spatial_static",
+    "priority": "P1",
+    "cadence": "monthly",
+    "description": "Monthly consents to commence building works issued by the Building Authority.",
+    "join_keys": ["year_month"],
+    "file_name": "Md12.csv",
+    "url": "https://static.data.gov.hk/bd/opendata/monthlydigests/Md12.csv",
+    "source_page": "https://data.gov.hk/en-data/dataset/hk-bd-opendata-monthly-digests/resource/62fc59a4-1746-46b1-9ed9-4ff7f92dcb75"
+  },
+  {
+    "name": "bd_occupation_permits_monthly",
+    "kind": "static_url",
+    "group": "spatial_static",
+    "priority": "P1",
+    "cadence": "monthly",
+    "description": "Monthly occupation permits issued by the Building Authority.",
+    "join_keys": ["year_month"],
+    "file_name": "Md13.csv",
+    "url": "https://static.data.gov.hk/bd/opendata/monthlydigests/Md13.csv",
+    "source_page": "https://data.gov.hk/en-data/dataset/hk-bd-opendata-monthly-digests/resource/8df5c94e-29b3-4ea9-8f98-d71498a3a43d"
+  },
+  {
+    "name": "bd_building_completion_monthly",
+    "kind": "static_url",
+    "group": "spatial_static",
+    "priority": "P1",
+    "cadence": "monthly",
+    "description": "Monthly completion of new buildings and alteration and addition work.",
+    "join_keys": ["year_month"],
+    "file_name": "Md17.csv",
+    "url": "https://static.data.gov.hk/bd/opendata/monthlydigests/Md17.csv",
+    "source_page": "https://data.gov.hk/en-data/dataset/hk-bd-opendata-monthly-digests/resource/1ff627be-d10f-4a59-8a1b-2c1d7783963a"
+  },
+  {
     "name": "district_population_projection",
     "kind": "arcgis_layer",
     "group": "spatial_static",

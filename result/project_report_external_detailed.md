@@ -31,8 +31,9 @@
 - 月度交通客流
 - 月度公共运输统计
 - 月度能源统计
+- 月度建筑开工、入伙许可和落成数据
 - 年度人口预测
-- 静态建筑 footprint
+- 建筑存量快照数据
 
 所以项目最终做了一个重要调整：
 
@@ -448,18 +449,123 @@
 - 电力使用方式正在变化
 - 充电网络规模可以反映电力需求结构升级趋势
 
-## 6.11 building_footprints_city_static.csv
+## 6.11 building_consent_monthly.csv
+
+### 文件定位
+
+- 文件名：`data/silver/building_consent_monthly.csv`
+- 行数：176
+- 列数：6
+- 时间范围：2011-06 到 2026-01
+
+### 数据来源
+
+- 香港 Buildings Department 月度摘要
+- 对应的是 Building Authority 发出的开工同意书
+
+### 主要字段
+
+- `period_month`
+- `building_consent_demolition_count`
+- `building_consent_site_formation_count`
+- `building_consent_foundation_count`
+- `building_consent_superstructure_count`
+- `building_consent_total_count`
+
+### 它的作用
+
+这组数据描述“建筑工程在多大程度上开始推进”。
+
+它更像房地产和建设活动的前导指标。
+
+如果一个月开工相关活动更多，通常意味着：
+
+- 未来一段时间建筑供给可能增加
+- 建筑施工相关活动更活跃
+- 后续商业和住宅投入使用的概率更高
+
+## 6.12 occupation_permits_monthly.csv
+
+### 文件定位
+
+- 文件名：`data/silver/occupation_permits_monthly.csv`
+- 行数：176
+- 列数：6
+- 时间范围：2011-06 到 2026-01
+
+### 数据来源
+
+- 香港 Buildings Department 月度摘要
+- 对应的是每月发出的 occupation permits
+
+### 主要字段
+
+- `period_month`
+- `occupation_permits_domestic_count`
+- `occupation_permits_non_domestic_count`
+- `occupation_permits_composite_count`
+- `occupation_permits_total_count`
+- `occupation_permits_domestic_units`
+
+### 它的作用
+
+这张表非常接近“本月有多少新建筑可以进入使用阶段”。
+
+与单纯的施工开工相比，它更接近真正会影响用电需求的时间点，因为：
+
+- 建筑拿到 occupation permit 后，更可能进入实际使用
+- 住宅单位数可以近似代表新增可入住供给
+- 非住宅 permit 数量可以近似代表新增商业或其他建筑供给
+
+## 6.13 building_completion_monthly.csv
+
+### 文件定位
+
+- 文件名：`data/silver/building_completion_monthly.csv`
+- 行数：176
+- 列数：10
+- 时间范围：2011-06 到 2026-01
+
+### 数据来源
+
+- 香港 Buildings Department 月度摘要
+- 对应的是每月新落成建筑及相关工程
+
+### 主要字段
+
+- `period_month`
+- `building_completion_domestic_gfa`
+- `building_completion_non_domestic_gfa`
+- `building_completion_total_gfa`
+- `building_completion_domestic_ufa`
+- `building_completion_non_domestic_ufa`
+- `building_completion_total_ufa`
+- `building_completion_domestic_units`
+- `building_completion_declared_cost_hkd`
+- `building_completion_declared_cost_aa_hkd`
+
+### 它的作用
+
+这张表是当前项目中最重要的建筑类动态特征来源。
+
+相比静态 footprint，它是真正按月变化的，所以模型可以学习：
+
+- 哪些月份新建筑落成规模更大
+- 新增住宅单位是否与用电变化有关
+- 新增楼面面积是否会对应后续用电需求提升
+
+## 6.14 building_footprints_city_static.csv
 
 ### 文件定位
 
 - 文件名：`data/silver/building_footprints_city_static.csv`
 - 行数：1
 - 列数：6
-- 类型：静态表
+- 类型：静态参考表
 
 ### 数据来源
 
-- 香港建筑 footprint 空间数据
+- 香港建筑 footprint 空间数据快照
 
 ### 主要字段
 
@@ -470,18 +576,17 @@
 - `building_height_m_mean`
 - `completed_building_count`
 
-### 它的作用
+### 它在当前项目里的角色
 
-这是一组描述香港整体建筑存量结构的静态变量。
+这张表仍然有分析价值，因为它描述了香港整体建筑存量结构。
 
-它代表的是城市电力需求的空间和物理基础：
+但是在当前“单城市月度预测”的训练设定里，它不再作为主训练特征，原因是：
 
-- 建筑数量
-- 建筑占地面积
-- 平均建筑高度
-- 已建成建筑规模
+- 它本质上是一个静态快照
+- 在月份之间几乎不变化
+- 无法可靠构造“每月新增建筑数量”
 
-这些变量不会解释短期波动，但它们能解释“为什么香港的负荷底盘是现在这个规模”。
+因此，当前版本把它保留在 `silver` 层作为参考背景，而真正进入训练的是前面三张按月变化的建筑活动表。
 
 ## 7. 模型训练前，数据是怎样被统一到一起的
 
@@ -496,7 +601,7 @@
 - 日线数据先按月汇总
 - 月线数据直接保留
 - 年线数据按年份对齐到每个月
-- 静态数据复制到所有月份
+- 静态数据保留在 `silver` 层作为背景参考
 
 ### 7.2 字段统一
 
@@ -521,7 +626,24 @@
 
 这样才是真正的预测任务，而不是事后拟合。
 
-### 7.4 历史特征构造
+### 7.4 建筑特征构造
+
+项目一开始尝试使用静态 building footprint 作为建筑类特征。
+
+但后来发现：
+
+- 单次 footprint 快照不能可靠推出“每月新增建筑”
+- `LASTUPDATEDATE` 更像图层更新时间，而不是建筑完工日期
+
+所以当前版本改用官方月度建筑活动数据，构造出真正会按月变化的特征，例如：
+
+- `building_consent_total_count`
+- `occupation_permits_total_count`
+- `occupation_permits_domestic_units`
+- `building_completion_total_gfa`
+- `building_completion_domestic_units`
+
+### 7.5 历史特征构造
 
 项目给模型加入了一组历史用电特征，包括：
 
@@ -544,7 +666,7 @@
 它的规模是：
 
 - 157 行
-- 89 列
+- 96 列
 - 时间范围：2013-01 到 2026-01
 
 为什么从 2013 年开始？
@@ -555,6 +677,8 @@
 - 从这个时间点开始，主要外生变量的覆盖更稳定
 
 也就是说，虽然某些原始表更早就有数据，但为了保证训练表质量，项目选择了“交集更稳定”的时间窗口。
+
+相比早期版本，这张训练表新增了一组真正参与训练的建筑活动特征，而不是只保留静态建筑快照。
 
 ## 9. 数据处理时遇到的主要问题
 
@@ -618,6 +742,18 @@
 - 先按年份映射到每个月
 - 如果月份超出可用区间，则裁剪到最近可用年份
 
+### 9.6 建筑 footprint 快照无法直接表示每月新增建筑
+
+问题：
+
+- 单次建筑 footprint 快照没有可靠的完工月份字段
+- `LASTUPDATEDATE` 反映的是数据维护时间，不等于建成时间
+
+处理：
+
+- 不再把 footprint 快照当作“每月新增建筑”来源
+- 改为接入 Buildings Department 的月度开工、入伙许可和落成表
+
 ## 10. 模型部分是怎么做的
 
 项目没有一开始就追求最复杂的模型，而是先搭建了几组能清楚解释结果的 baseline。
@@ -654,6 +790,7 @@
 - 节假日
 - 客流
 - 交通
+- 建筑活动
 - 燃气
 - 季节编码
 
@@ -662,24 +799,24 @@
 ### 11.1 主模型 baseline 结果
 
 - Seasonal naive：MAE 1210.57，RMSE 1396.17，R2 0.7054
-- Ridge：MAE 928.35，RMSE 1375.55，R2 0.7141
-- Random Forest：MAE 456.93，RMSE 609.79，R2 0.9438
+- Ridge：MAE 1143.67，RMSE 1728.64，R2 0.5484
+- Random Forest：MAE 454.19，RMSE 614.60，R2 0.9429
 
 这说明：
 
 - 去年同月这个简单规则已经能抓到一部分规律
-- 线性模型有一定提升
+- 在线性约束较强的模型里，建筑活动与其他变量之间的相关性会增加建模难度
 - Random Forest 表现最好，说明当前任务存在明显的非线性关系
 
 ### 11.2 回归验证结果
 
 - Simple regression：MAE 1155.41，RMSE 1346.22，R2 0.7261
-- Multiple regression：MAE 784.25，RMSE 944.58，R2 0.8652
+- Multiple regression：MAE 684.98，RMSE 857.50，R2 0.8889
 
 这说明：
 
 - 只看历史季节性已经能做出一个还不错的预测
-- 但把天气、节假日、客流、交通和燃气等变量加进去以后，效果明显更好
+- 但把天气、节假日、客流、交通、燃气和建筑活动等变量加进去以后，效果明显更好
 
 ## 12. 这些指标该怎么理解
 
@@ -717,7 +854,9 @@ R2 可以理解成模型对目标变化的解释程度。
 
 第三，仅靠历史用电还不够，天气、节假日、客流和交通等动态变量提供了额外信息。
 
-第四，从公开数据现实条件来看，月度任务比最初设想的小时级任务更可靠，也更适合教学项目。
+第四，建筑活动类月度数据是有效的补充，它比静态 footprint 更适合直接进入训练。
+
+第五，从公开数据现实条件来看，月度任务比最初设想的小时级任务更可靠，也更适合教学项目。
 
 ## 14. 项目的边界和限制
 
@@ -740,6 +879,12 @@ R2 可以理解成模型对目标变化的解释程度。
 - 年度人口
 
 这些变量更适合解释长期底盘，而不一定能解释每个月的短期波动。
+
+因此，在当前版本里：
+
+- 年度人口仍然参与训练，因为它会逐年变化
+- 建筑 footprint 和 EV charger 保留在 `silver` 层作背景参考
+- 真正进入训练的建筑变量，已经换成月度建筑活动数据
 
 ## 15. 项目已经交付了什么
 

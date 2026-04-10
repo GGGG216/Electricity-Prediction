@@ -1,0 +1,14 @@
+{
+  "source_name": "bd_building_completion_monthly",
+  "collected_at_utc": "2026-04-10T03:00:34.884022+00:00",
+  "status": "downloaded",
+  "priority": "P1",
+  "group": "spatial_static",
+  "description": "Monthly completion of new buildings and alteration and addition work.",
+  "destination": "D:\\= =\\3544\\project\\data\\raw\\bd_building_completion_monthly\\20260410T030031Z_Md17.csv",
+  "details": {
+    "bytes_written": 18771,
+    "content_type": "text/csv",
+    "source_url": "https://static.data.gov.hk/bd/opendata/monthlydigests/Md17.csv"
+  }
+}

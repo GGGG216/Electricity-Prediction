@@ -4,7 +4,7 @@
   "time_col": "period_month",
   "train_rows": 125,
   "test_rows": 32,
-  "feature_count": 67,
+  "feature_count": 86,
   "features": [
     "electricity_commercial_tj",
     "electricity_domestic_tj",
@@ -53,6 +53,25 @@
     "cross_harbour_av_pax",
     "cross_harbour_db_pax",
     "cross_harbour_total_pax",
+    "building_consent_demolition_count",
+    "building_consent_site_formation_count",
+    "building_consent_foundation_count",
+    "building_consent_superstructure_count",
+    "building_consent_total_count",
+    "occupation_permits_domestic_count",
+    "occupation_permits_non_domestic_count",
+    "occupation_permits_composite_count",
+    "occupation_permits_total_count",
+    "occupation_permits_domestic_units",
+    "building_completion_domestic_gfa",
+    "building_completion_non_domestic_gfa",
+    "building_completion_total_gfa",
+    "building_completion_domestic_ufa",
+    "building_completion_non_domestic_ufa",
+    "building_completion_total_ufa",
+    "building_completion_domestic_units",
+    "building_completion_declared_cost_hkd",
+    "building_completion_declared_cost_aa_hkd",
     "hkelectric_re_generation_solar_photovoltaic",
     "hkelectric_re_generation_wind_power",
     "hkelectric_re_generation_grand_total",
@@ -82,16 +101,16 @@
       "mape": 0.08946188480750775
     },
     "ridge": {
-      "mae": 928.3543537747008,
-      "rmse": 1375.551010623804,
-      "r2": 0.7140661254212612,
-      "mape": 0.07017093720149889
+      "mae": 1143.6746081831548,
+      "rmse": 1728.6439909608564,
+      "r2": 0.5484318212469106,
+      "mape": 0.08614075379702454
     },
     "random_forest": {
-      "mae": 456.933454143489,
-      "rmse": 609.7891987400645,
-      "r2": 0.9438083657038432,
-      "mape": 0.03290084435403433
+      "mae": 454.1919326742529,
+      "rmse": 614.5958273847941,
+      "r2": 0.9429190196372791,
+      "mape": 0.03269569975811552
     }
   }
 }

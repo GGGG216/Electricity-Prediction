@@ -48,14 +48,14 @@ Dynamic monthly features:
 - monthly immigration aggregates
 - monthly public transport demand
 - monthly cross-harbour passenger flow
+- monthly building activity from Buildings Department
 - HK Electric renewable generation
 - lag and rolling statistics of electricity consumption
 
 Static or slow-moving features:
 
 - city population and density
-- EV charger stock
-- building footprint summary
+- building footprint snapshot kept as reference context
 
 ## Quick Start
 

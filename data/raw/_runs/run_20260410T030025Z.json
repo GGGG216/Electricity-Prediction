@@ -1,0 +1,53 @@
+{
+  "run_id": "run_20260410T030025Z",
+  "output_root": "D:\\= =\\3544\\project\\data\\raw",
+  "selected_sources": [
+    "bd_consent_commence_work_monthly",
+    "bd_occupation_permits_monthly",
+    "bd_building_completion_monthly"
+  ],
+  "results": [
+    {
+      "source_name": "bd_consent_commence_work_monthly",
+      "collected_at_utc": "2026-04-10T03:00:28.705704+00:00",
+      "status": "downloaded",
+      "priority": "P1",
+      "group": "spatial_static",
+      "description": "Monthly consents to commence building works issued by the Building Authority.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\bd_consent_commence_work_monthly\\20260410T030025Z_Md12.csv",
+      "details": {
+        "bytes_written": 6343,
+        "content_type": "text/csv",
+        "source_url": "https://static.data.gov.hk/bd/opendata/monthlydigests/Md12.csv"
+      }
+    },
+    {
+      "source_name": "bd_occupation_permits_monthly",
+      "collected_at_utc": "2026-04-10T03:00:31.817679+00:00",
+      "status": "downloaded",
+      "priority": "P1",
+      "group": "spatial_static",
+      "description": "Monthly occupation permits issued by the Building Authority.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\bd_occupation_permits_monthly\\20260410T030028Z_Md13.csv",
+      "details": {
+        "bytes_written": 6552,
+        "content_type": "text/csv",
+        "source_url": "https://static.data.gov.hk/bd/opendata/monthlydigests/Md13.csv"
+      }
+    },
+    {
+      "source_name": "bd_building_completion_monthly",
+      "collected_at_utc": "2026-04-10T03:00:34.884022+00:00",
+      "status": "downloaded",
+      "priority": "P1",
+      "group": "spatial_static",
+      "description": "Monthly completion of new buildings and alteration and addition work.",
+      "destination": "D:\\= =\\3544\\project\\data\\raw\\bd_building_completion_monthly\\20260410T030031Z_Md17.csv",
+      "details": {
+        "bytes_written": 18771,
+        "content_type": "text/csv",
+        "source_url": "https://static.data.gov.hk/bd/opendata/monthlydigests/Md17.csv"
+      }
+    }
+  ]
+}

@@ -9,7 +9,7 @@ This result package summarizes the monthly Hong Kong electricity forecasting wor
 | Item | Value |
 |---|---:|
 | train_ready_rows | 157 |
-| train_ready_columns | 89 |
+| train_ready_columns | 96 |
 | start_month | 2013-01-01 |
 | end_month | 2026-01-01 |
 | target_mean_tj | 13348.172239490446 |
@@ -28,6 +28,10 @@ This result package summarizes the monthly Hong Kong electricity forecasting wor
 | transport_public_total_monthly | 157 |
 | transport_public_mode_wide_monthly | 157 |
 | transport_cross_harbour_monthly | 157 |
+| building_consent_monthly | 176 |
+| occupation_permits_monthly | 176 |
+| building_completion_monthly | 176 |
+| building_activity_monthly | 176 |
 | censtatd_energy_use_monthly | 6130 |
 | censtatd_local_consumption_revenue_quarterly | 1134 |
 | censtatd_peak_demand_annual | 96 |
@@ -46,21 +50,21 @@ This result package summarizes the monthly Hong Kong electricity forecasting wor
 | Model | MAE | RMSE | R2 | MAPE |
 |---|---:|---:|---:|---:|
 | Naive Same Month Last Year | 1210.57 | 1396.17 | 0.7054 | 0.0895 |
-| Ridge | 928.35 | 1375.55 | 0.7141 | 0.0702 |
-| Random Forest | 456.93 | 609.79 | 0.9438 | 0.0329 |
+| Ridge | 1143.67 | 1728.64 | 0.5484 | 0.0861 |
+| Random Forest | 454.19 | 614.60 | 0.9429 | 0.0327 |
 
 ## Regression Summary
 
 | Model | MAE | RMSE | R2 | MAPE |
 |---|---:|---:|---:|---:|
 | Simple linear regression | 1155.41 | 1346.22 | 0.7261 | 0.0871 |
-| Multiple linear regression | 784.25 | 944.58 | 0.8652 | 0.0584 |
+| Multiple linear regression | 684.98 | 857.50 | 0.8889 | 0.0507 |
 
 ## Interpretation
 
 - The simple regression uses `electricity_lag_12m` and captures annual seasonality reasonably well.
-- The multiple regression improves MAE by 371.16 TJ and raises R2 from 0.7261 to 0.8652.
-- This indicates that monthly weather, mobility, transport, and seasonal features contribute meaningful signal beyond a single lag baseline.
+- The multiple regression improves MAE by 470.43 TJ and raises R2 from 0.7261 to 0.8889.
+- This indicates that monthly weather, mobility, transport, building activity, and seasonal features contribute meaningful signal beyond a single lag baseline.
 
 ## Top Correlated Features
 

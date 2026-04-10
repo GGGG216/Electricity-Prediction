@@ -43,6 +43,8 @@ def _plot_feature_availability(frame: pd.DataFrame, output_path: Path) -> None:
         "immigration_total_cross_border_passengers",
         "public_transport_total_avg_daily_pax",
         "cross_harbour_total_pax",
+        "occupation_permits_total_count",
+        "building_completion_total_gfa",
         "hkelectric_re_generation_grand_total",
         "population",
     ]
@@ -248,7 +250,7 @@ def _build_markdown(
             "",
             f"- The simple regression uses `{simple['feature']}` and captures annual seasonality reasonably well.",
             f"- The multiple regression improves MAE by {simple['metrics']['mae'] - multiple['metrics']['mae']:.2f} TJ and raises R2 from {simple['metrics']['r2']:.4f} to {multiple['metrics']['r2']:.4f}.",
-            "- This indicates that monthly weather, mobility, transport, and seasonal features contribute meaningful signal beyond a single lag baseline.",
+            "- This indicates that monthly weather, mobility, transport, building activity, and seasonal features contribute meaningful signal beyond a single lag baseline.",
             "",
             "## Top Correlated Features",
             "",

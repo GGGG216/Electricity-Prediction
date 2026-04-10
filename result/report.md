@@ -11,33 +11,33 @@
 ## Models
 
 - Simple linear regression: one feature `electricity_lag_12m`
-- Multiple linear regression: 13 features
+- Multiple linear regression: 18 features
 
 ## Metrics
 
 | Model | MAE | RMSE | R2 | MAPE |
 |---|---:|---:|---:|---:|
 | Simple linear regression | 1155.41 | 1346.22 | 0.7261 | 0.0871 |
-| Multiple linear regression | 784.25 | 944.58 | 0.8652 | 0.0584 |
+| Multiple linear regression | 684.98 | 857.50 | 0.8889 | 0.0507 |
 
 ## Interpretation
 
 - The simple model already works reasonably well because `electricity_lag_12m` captures strong annual seasonality in Hong Kong monthly electricity consumption.
-- The multiple model improves MAE from 1155.41 to 784.25 and improves R2 from 0.7261 to 0.8652.
+- The multiple model improves MAE from 1155.41 to 684.98 and improves R2 from 0.7261 to 0.8889.
 - This means monthly weather, mobility, transport, and seasonality features add useful signal beyond a single seasonal lag.
 
 ## Most Influential Multiple-Regression Coefficients
 
 | Feature | Coefficient |
 |---|---:|
-| `cos_month` | -3276.8986 |
-| `sin_month` | -1207.5993 |
-| `temp_max_c_peak` | -688.3316 |
-| `cross_harbour_total_pax` | -471.2055 |
-| `electricity_lag_12m` | -392.8965 |
-| `public_transport_total_avg_daily_pax` | 331.4616 |
-| `gas_total_tj` | 123.5374 |
-| `temp_mean_c_avg` | 120.9174 |
+| `cos_month` | -3298.2077 |
+| `sin_month` | -1183.1565 |
+| `temp_max_c_peak` | -695.5468 |
+| `cross_harbour_total_pax` | -459.2486 |
+| `electricity_lag_12m` | -441.8400 |
+| `public_transport_total_avg_daily_pax` | 343.2534 |
+| `gas_total_tj` | 117.9301 |
+| `temp_mean_c_avg` | 100.2369 |
 
 ## Caveats
 
